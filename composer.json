@@ -1,0 +1,22 @@
+{
+    "name": "augustash/sassy",
+    "type": "magento2-component",
+    "license": [
+        "proprietary"
+    ],
+    "version": "0.9.0",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "magento/framework": "*"
+    },
+    "extra": {
+        "map": [
+            [
+                "src/",
+                "."
+            ]
+        ]
+    }
+}

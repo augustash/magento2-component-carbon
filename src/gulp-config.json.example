@@ -1,0 +1,4 @@
+{
+    "browser-sync": "dev/tools/gulp/configs/browser-sync-local",
+    "themes": "dev/tools/gulp/configs/themes-local"
+}

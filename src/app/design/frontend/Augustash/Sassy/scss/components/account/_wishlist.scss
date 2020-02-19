@@ -1,0 +1,43 @@
+.account {
+
+  &.wishlist-index-index {
+
+    .actions-toolbar {
+
+      .primary {
+
+        .action {
+
+          &.update,
+          &.share {
+            @include button($type: primary, $outline: true);
+          }
+
+          &.tocart {
+            @include button($type: primary);
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar-additional {
+
+  .block-wishlist {
+
+    .product-item {
+
+      .product-item-name {
+        font-size: rem-calc(22);
+      }
+    }
+
+    .actions-toolbar {
+
+      .action.details {
+        @include button($type: primary, $outline: true);
+      }
+    }
+  }
+}

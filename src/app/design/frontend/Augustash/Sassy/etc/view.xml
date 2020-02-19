@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sass-based Boilerplate Frontend Theme
+ *
+ * @author    Peter McWilliams <pmcwilliams@augustash.com>
+ * @copyright Copyright (c) 2020 August Ash (https://www.augustash.com)
+ */
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <vars module="Magento_Catalog">
+        <!-- Disable gallery and magnifier fullscreen -->
+        <var name="gallery">
+            <var name="allowfullscreen">false</var>
+        </var>
+    </vars>
+</view>

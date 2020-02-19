@@ -1,0 +1,60 @@
+.pages {
+
+  strong.page {
+    background-color: $primary-color;
+
+    span {
+      color: $white;
+    }
+  }
+
+  .item {
+
+    a {
+      color: $primary-color;
+
+      &:visited,
+      &:active,
+      &:focus {
+        color: $primary-color;
+      }
+
+      &:hover {
+        color: darken($primary-color, 10);
+      }
+    }
+  }
+
+  .action {
+
+    &.next {
+      @include button($type: text);
+      @include icon($position: before, $icon: chevron-right) {
+        color: $primary-color;
+      }
+
+      &:hover {
+        color: $secondary-color;
+
+        &:before {
+          color: $secondary-color;
+        }
+      }
+    }
+
+    &.previous {
+      @include button($type: text);
+      @include icon($position: before, $icon: chevron-left) {
+        color: $primary-color;
+      }
+
+      &:hover {
+        color: $secondary-color;
+
+        &:before {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}

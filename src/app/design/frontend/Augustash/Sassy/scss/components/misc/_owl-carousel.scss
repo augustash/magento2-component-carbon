@@ -1,0 +1,139 @@
+// Custom Owl Carousel styles.
+.owl-carousel {
+
+  &.owl-carousel-products-bestsell_products {
+
+    .cms-index-index & {
+      max-width: $grid-container - 100; // container and offset for arrows.
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .owl-controls {
+
+      .owl-nav {
+
+        .owl-prev,
+        .owl-next {
+          background-color: $white;
+          border-radius: 50%;
+          border: 2px solid $black;
+          width: 50px;
+          height: 50px;
+          transition: background-color $global-speed, border $global-speed;
+
+          &:before {
+            top: $global-padding * 1.1;
+            left: $global-padding * 1.1;
+            transition: background-color $global-speed;
+          }
+
+          &:hover {
+            border-color: $primary-color;
+
+            &:before {
+              background-color: $primary-color;
+            }
+          }
+        }
+      }
+
+      .owl-dots {
+        @include visually-hidden;
+      }
+    }
+
+    .owl-stage {
+      display: flex;
+    }
+
+    .owl-item {
+      display: flex;
+      flex-direction: column;
+      margin: 0 $global-margin;
+
+      @include breakpoint(medium) {
+        margin: 0 ($global-margin * 3);
+      }
+
+      .product-item {
+        border: 1px solid $grey-light;
+        text-align: center;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: $global-padding ($global-padding * 2);
+
+        @include breakpoint(medium) {
+          padding: ($global-padding * 2) ($global-padding * 4);
+        }
+
+        .product-item-info { // inner div inside the li
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+
+          &:hover {
+            background: transparent;
+            box-shadow: none;
+            border: 0;
+            margin: 0;
+            padding: 0;
+          }
+
+          // Hover state that will cheat the dual links.
+          // If the photo link is hovered, the title changes as well as if it was hovered.
+          .product-item-photo {
+
+            &:hover {
+
+              + .product-item-details {
+
+                .product-item-link {
+                  color: $primary-color;
+                }
+              }
+            }
+          }
+
+          .product-item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            .product-item-link {
+              transition: color $global-speed;
+
+              &:hover {
+                color: $primary-color;
+                text-decoration: none;
+              }
+            }
+
+            .price-box {
+              margin: auto auto $global-margin;
+            }
+
+            .price-container {
+
+              .price-label {
+                display: inline-block;
+                margin-right: $global-margin / 2;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.owl-carousel-custom-1 {
+
+    .cms-index-index & {
+
+      .owl-stage-outer {
+        padding-top: 0;
+      }
+    }
+  }
+}

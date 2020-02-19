@@ -1,0 +1,163 @@
+.block.newsletter {
+
+  .actions {
+
+    .action.subscribe {
+      font-size: rem-calc(22);
+
+      &.sr-only {
+        height: auto;
+      }
+    }
+  }
+}
+
+.page-footer {
+  background-color: $black;
+  color: $white;
+  padding: $global-padding * 4;
+
+  .footer.news {
+    @include spacing($position: bottom);
+    @include spacing($position: bottom, $type: padding);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $grey-offset;
+    max-width: 1280px; // This will need to change
+    padding-left: 20px; // This will need to change
+    padding-right: 20px; // This will need to change
+    margin-left: auto; // This will need to change
+    margin-right: auto; // This will need to change
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .news.links {
+      list-style-type: none;
+      margin-top: $global-margin;
+      margin-bottom: 0;
+
+      @include breakpoint(medium) {
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-top: 0;
+      }
+
+      li {
+        margin-bottom: 0;
+
+        @include breakpoint(medium) {
+          margin-right: $global-margin * 2;
+        }
+      }
+
+      a {
+        color: $grey-offset;
+
+        &:hover {
+          color: $red;
+        }
+      }
+
+      .locations {
+        @include icon($position: before, $icon: map-marker) {
+          margin-right: $global-margin / 2;
+        }
+      }
+
+      .online-catalog {
+        @include icon($position: before, $icon: book) {
+          margin-right: $global-margin / 2;
+        }
+      }
+    }
+  }
+
+  .footer.content {
+    @include spacing;
+    @include spacing($position: top, $type: padding);
+    border-top: 0;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+
+    .footer-brand {
+      width: 100%;
+
+      @include breakpoint(medium) {
+        width: 33%;
+      }
+
+      .social-icons {
+
+        @include breakpoint(medium down) {
+          margin-bottom: $global-margin * 2;
+        }
+
+        .social-icon {
+          border-radius: 50%;
+          border: 1px solid $white;
+          color: $white;
+          display: inline-block;
+          line-height: normal;
+          margin: 0 ($global-margin / 2);
+          padding: $global-padding;
+          height: rem-calc(20);
+          width: rem-calc(20);
+          text-align: center;
+          transition: background-color $global-speed, border-color $global-speed;
+
+          &:hover {
+            background-color: $red;
+            border-color: $red;
+          }
+        }
+      }
+    }
+
+    .footer.lists {
+      width: 100%;
+
+      @include breakpoint(medium) {
+        width: 77%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: $global-margin * 2;
+      }
+
+      .footer-list {
+
+        .list-title {
+          display: inline-block;
+          margin-bottom: $global-margin * 1.5;
+          text-transform: uppercase;
+        }
+
+        .list-links {
+
+          a {
+            color: $white;
+            opacity: 0.75;
+            display: block;
+            padding: ($global-padding / 2) 0;
+            margin: ($global-margin / 4) 0;
+            transition: color $global-speed, opacity $global-speed;
+
+            &:hover {
+              color: $red;
+              opacity: 1;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

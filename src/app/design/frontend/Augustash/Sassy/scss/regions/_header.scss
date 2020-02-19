@@ -1,0 +1,49 @@
+.header {
+
+  .logo {
+    @include breakpoint(small only) {
+      left: 25%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    img {
+      height: auto;
+    }
+  }
+}
+
+header.page-header {
+  background-color: $black;
+
+  .panel.wrapper {
+    border: 0;
+  }
+
+  .header.panel {
+    background: transparent;
+    padding: 0;
+  }
+
+  .header.content {
+    display: flex;
+
+    @include breakpoint(medium) {
+      flex-direction: row;
+      align-items: center;
+
+      .header.links {
+        order: 3;
+      }
+
+      .block.block-search {
+        order: 2;
+        margin: auto;
+      }
+
+      .minicart-wrapper {
+        order: 4;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+
+.category-view {
+
+  .catalog-category-view & {
+
+    .category-description {
+      text-align: center;
+      padding: 0 ($global-padding * 3);
+
+      @include breakpoint(medium) {
+        max-width: $global-padding * 85;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

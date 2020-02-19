@@ -1,0 +1,19 @@
+.filter-content {
+
+  .filter-actions {
+
+    .action.clear {
+      @include button($type: primary, $outline: true);
+    }
+  }
+
+  .filter-options-content {
+
+    a {
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}

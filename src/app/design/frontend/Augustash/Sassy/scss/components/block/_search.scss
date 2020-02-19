@@ -1,0 +1,41 @@
+
+.block.block-search {
+
+  @include breakpoint(large) {
+    width: $global-padding * 40;
+  }
+
+  .field.search {
+
+    input {
+      background-color: rgba($white, 0.3);
+      border-radius: $global-radius;
+      border-width: 0;
+      color: $white;
+      padding-left: $global-padding;
+
+      &::placeholder {
+        color: rgba($white, 0.5);
+      }
+
+      &:focus {
+        box-shadow: 0 0 3px 1px rgba($grey-offset, 0.4);
+      }
+    }
+  }
+
+  .action.search {
+
+    &:before {
+      color: $white;
+      transition: color $global-speed;
+    }
+
+    &:hover {
+
+      &:before {
+        color: $primary-color;
+      }
+    }
+  }
+}

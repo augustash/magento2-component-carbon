@@ -1,0 +1,30 @@
+.sidebar-additional {
+
+  .block-reorder {
+
+    .product-item {
+
+      .product-item-name {
+        font-size: rem-calc(22);
+      }
+    }
+
+    .actions-toolbar {
+
+      .primary {
+        float: none;
+
+        .action.tocart {
+          border-radius: $global-radius;
+        }
+      }
+
+      .secondary {
+
+        .action.view {
+          @include button($type: primary, $outline: true);
+        }
+      }
+    }
+  }
+}

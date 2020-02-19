@@ -1,0 +1,450 @@
+////////////////////////////////////////////////////////////////////////////////
+// MIXINS
+// -----------------------------------------------------------------------------
+
+//////////////////
+// typography
+/////////////////
+@mixin header-size($type) {
+  font-size: rem-calc(map-deep-get($header-sizes, small, $type, font-size));
+  font-weight: 400;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(map-deep-get($header-sizes, medium, $type, font-size));
+  }
+
+  @include breakpoint(large) {
+    font-size: rem-calc(map-deep-get($header-sizes, large, $type, font-size));
+  }
+}
+
+// ----------
+@mixin button-base {
+  background: $grey-light;
+  border: $global-border-width solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: $grey-text;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $semi-bold-font-family;
+  font-weight: normal;
+  font-size: rem-calc(14, $base-font-size);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  padding: ($global-padding) ($global-padding * 2);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  transition: background-color $global-speed;
+
+  &:visited,
+  &:active,
+  &:focus {
+    background: $grey-light;
+    box-shadow: none;
+  }
+
+  &:hover {
+    border: $global-border-width solid transparent;
+    color: $grey-light;
+    background: $grey;
+    cursor: pointer;
+  }
+}
+
+//////////////////
+// button - 4 style combinations
+//
+/// @param {Keyword} $type [primary secondary basic text] - Button importance/hierarchy. Accepts `primary`, `secondary`, `basic`, `text`
+/// @param {Boolean} $outline - Apply outline styling
+/// @param {Boolean} $reverse - Reverse the button's background color and text color
+/// @param {Boolean} $large - increase the button size
+@mixin button($type: basic, $outline: false, $reverse: false, $large: false) {
+  @include button-base;
+
+  @if $large == true {
+    padding: $global-padding ($global-padding * 3);
+    font-size: rem-calc(32);
+  }
+
+  @if ($type == 'primary') {
+    background: $primary-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($primary-color, 10);
+      color: $white;
+    }
+
+    &:focus,
+    &:active,
+    &:visited {
+      background: $primary-color;
+      color: $white;
+
+      &:hover {
+        background-color: darken($primary-color, 10);
+      }
+    }
+  }
+
+  @if ($reverse == true) {
+    background: $white;
+    border: $global-border-width solid $grey-text;
+    color: $grey-text;
+
+    @if ($type == 'primary') {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+
+    @if ($type == 'secondary') {
+      border-color: $secondary-color;
+      color: $secondary-color;
+    }
+
+    &:active,
+    &:focus {
+      background-color: transparent;
+
+      @if ($type == 'primary') {
+        background-color: $primary-color;
+        color: $white;
+      }
+
+      @if ($type == 'secondary') {
+        background-color: $secondary-color;
+        color: $white;
+      }
+    }
+
+    &:hover {
+      background-color: $grey;
+      color: $grey-light;
+
+      @if ($type == 'primary') {
+        background-color: $primary-color;
+        color: $white;
+      }
+
+      @if ($type == 'secondary') {
+        background-color: $secondary-color;
+        color: $white;
+      }
+
+      &:focus {
+        background-color: $grey;
+        color: $grey-light;
+
+        @if ($type == 'primary') {
+          background-color: $primary-color;
+          color: $white;
+        }
+
+        @if ($type == 'secondary') {
+          background-color: $secondary-color;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  @if ($type == 'text') {
+    border: $global-border-width solid transparent;
+    background: transparent;
+    color: $primary-color;
+    font-size: rem-calc(14, $base-font-size);
+    transition: color $global-speed;
+
+    &:hover {
+      background: transparent;
+      border-color: transparent;
+      color: $secondary-color;
+    }
+
+    &:visited,
+    &:active,
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  @if ($outline == true) {
+    background-color: transparent;
+    color: $primary-color;
+    border: $global-border-width solid rgba($primary-color, 0.5);
+
+    &:visited,
+    &:active,
+    &:focus {
+      color: $primary-color;
+    }
+
+    &:hover {
+      background-color: darken($primary-color, 10);
+      border-color: darken($primary-color, 10);
+      color: $white;
+    }
+  }
+
+  @content;
+}
+
+// Root level component spacing
+// ----------
+/// @param {Keyword} $type [margin] - Type of spacing to output. Accepts either margin or padding.
+// @param {List} $position [bottom top] - The position to apply spacing to. Accepts `top`, `bottom`, `left`, `right` in any combination.
+@mixin spacing(
+  $position: top bottom,
+  $multiplier: 1,
+  $type: margin
+) {
+
+  @if ($type == 'margin') {
+    $margin: $global-margin;
+
+    // Loop through each gutter position
+    @each $value in $position {
+      #{$type}-#{$value}: ($margin * 2) * $multiplier;
+
+      @include breakpoint(medium) {
+        #{$type}-#{$value}: ($margin * 3) * $multiplier;
+      }
+
+      @include breakpoint(large) {
+        #{$type}-#{$value}: ($margin * 5) * $multiplier;
+      }
+    }
+  }
+
+  @if ($type == 'padding') {
+    $padding: $global-padding;
+
+    // Loop through each gutter position
+    @each $value in $position {
+      #{$type}-#{$value}: ($padding * 2) * $multiplier;
+
+      @include breakpoint(medium) {
+        #{$type}-#{$value}: ($padding * 3) * $multiplier;
+      }
+
+      @include breakpoint(large) {
+        #{$type}-#{$value}: ($padding * 3.5) * $multiplier;
+      }
+    }
+  }
+}
+
+/////////////////////
+// Font Face
+// Generates the proper font styles from a linked font file(s).
+// ---------
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff) { // eot woff2 woff ttf svg
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    // otf: 'opentype',
+    // ttf: 'truetype'
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);  /* stylelint-disable-line function-url-quotes */
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+    font-display: swap;
+  }
+}
+
+//////////////////////
+// fontawesome icon
+//////////////////////
+@mixin icon($position: before, $icon: false, $styles: true, $font-family: 'FontAwesome' ) {
+  @if $position == both {
+    $position: 'before, &:after';
+  }
+  // Either a :before or :after pseudo-element, or both, defaulting to :before
+  &:#{$position} {
+    @if $icon {
+      // A particular icon has been specified
+      content: '#{map-get($icons, $icon)}';
+    }
+    @if $styles {
+      // Supportive icon styles required
+      speak: none;
+      font-style: normal;
+      font-weight: 400;
+      font-variant: normal;
+      text-transform: none;
+      font-family: $font-family !important; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */ /* stylelint-disable-line declaration-no-important */
+    }
+    // Include any extra rules supplied for the pseudo-element
+    @content;
+  }
+}
+
+// f=fontawesome icons
+// icon font codes
+$icons: (
+  // social icons
+  facebook: '\f09a',
+  twitter: '\f099',
+  linkedin: '\f0e1',
+  googleplus: '\f0d5',
+  pinterest: '\f231',
+  instagram: '\f16d',
+  // misc
+  active: '\f06e',
+  anchor: '\f13d',
+  ban: '\f05e',
+  bars: '\f0c9',
+  book: '\f02d',
+  calculator: '\f1ec',
+  check: '\f05e',
+  check-circle: '\f058',
+  check-square: '\f14a',
+  check-double: '\f560',
+  circle: '\f111',
+  close: '\f00d',
+  cog: '\f013',
+  cogs: '\f085',
+  devel: '\f121',
+  ellipsis-h: '\f141',
+  ellipsis-v: '\f142',
+  envelope: '\f0e0',
+  envelope-open: '\f2b6',
+  map-marker: '\f041',
+  menu: '\f039',
+  mobile: '\f3cd',
+  more: '\f105',
+  phone: '\f095',
+  phone-alt: '\f879',
+  print: '\f02f',
+  redo: '\f01e',
+  redo-alt: '\f2f9',
+  search: '\f002',
+  star: '\f005', // font-weight 600 for solid, 400 for outlined
+  sync: '\f021',
+  sync-alt: '\f2f1',
+  tag: '\f02b',
+  padlock: '\f30d',
+  user: '\f007', // font-weight 600 for solid, 400 for outlined
+  user-alt: '\f406',
+  user-circle: '\f2bd', // font-weight 600 for solid, 400 for outlined
+  // arrows/navigation
+  angle-double-left: '\f100',
+  angle-double-right: '\f101',
+  angle-double-up: '\f102',
+  angle-double-down: '\f103',
+  angle-left: '\f104',
+  angle-right: '\f105',
+  angle-up: '\f106',
+  angle-down: '\f107',
+  arrow-left: '\e314',
+  arrow-right: '\e315',
+  chevron-up: '\f077',
+  chevron-down: '\f107',
+  chevron-left: '\f053',
+  chevron-right: '\f054',
+  up: '\f077',
+  down: '\f107',
+  // files/folders/attachments
+  add-file: '\f093',
+  file: '\f15b',
+  file-alt: '\f15c',
+  file-csv: '\f6dd',
+  file-excel: '\f1c3',
+  file-image: '\f1c5',
+  file-pdf: '\f1c1',
+  file-word: '\f1c2',
+  folder: '\f07b',
+  paperclip: '\f0c6',
+  pdf: '\f1c1',
+  // media
+  play: '\f04b',
+  play-circle: '\f144',
+  // comments/chat
+  comment: '\f075',
+  comment-alt: '\f27a',
+  comments: '\f086',
+  // e-commerce
+  credit-card: '\f09d',
+  shopping-bag: '\f290',
+  shopping-basket: '\f291',
+  shopping-cart: '\f07a',
+  // crud/permissions
+  edit: '\f044',
+  delete: '\f1f8',
+  lock: '\f023',
+  minus: '\f068',
+  pencil-alt: '\f303',
+  plus: '\f067',
+  revisions: '\f01e',
+  trash-alt: '\f2ed',
+  // wysiwyg/editor
+  list: '\f03a',
+  list-ul: '\f0ca',
+  list-ol: '\f0cb',
+  list-alt: '\f022', // font-weight 600 for solid, 400 for outlined
+  clipboard-list: '\f46d',
+  tasks: '\f0ae',
+  // modals/flash messages
+  info: '\f05a',
+  exclamation: '\f12a',
+  exclamation-circle: '\f06a',
+  exclamation-triangle: '\f071',
+);
+
+/**
+ * Hide elements visually, but keep them available for screen readers.
+ *
+ * Used for information required for screen reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+@mixin visually-hidden($focusable: false) {
+  position: absolute !important; /* stylelint-disable-line declaration-no-important */
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+
+  /**
+   * The .focusable class extends the .visually-hidden class to allow
+   * the element to be focusable when navigated to via the keyboard.
+   */
+  @if $focusable {
+
+    &:active,
+    &:focus {
+      position: static !important; /* stylelint-disable-line declaration-no-important */
+      clip: auto;
+      overflow: visible;
+      height: auto;
+      width: auto;
+    }
+  }
+}
+
+@mixin set-grid-container() {
+  max-width: $grid-container;
+  margin-left: auto;
+  margin-right: auto;
+}

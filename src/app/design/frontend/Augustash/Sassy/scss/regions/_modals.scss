@@ -1,0 +1,47 @@
+.modal-popup {
+
+  .block-title {
+    font-size: rem-calc(36);
+    line-height: 1;
+  }
+
+  .actions-toolbar {
+
+    .primary {
+      float: unset;
+      display: inline;
+
+      > .action {
+        @include button($type: primary);
+
+        &.secondary,
+        &.action-login {
+          @include button($type: primary);
+        }
+      }
+    }
+
+    .secondary {
+      display: inline;
+      float: unset;
+      margin-left: $global-margin;
+      margin-right: 0;
+      padding-top: 0;
+
+      > a {
+        @include button($type: text);
+      }
+    }
+  }
+
+  .modal-footer {
+
+    .action-primary {
+      @include button($type: primary);
+    }
+
+    .action-secondary {
+      @include button ($type: primary, $outline: true);
+    }
+  }
+}

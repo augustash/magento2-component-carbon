@@ -1,0 +1,12 @@
+.rating-summary {
+
+  .rating-result {
+
+    > span {
+
+      &:before {
+        color: $yellow;
+      }
+    }
+  }
+}

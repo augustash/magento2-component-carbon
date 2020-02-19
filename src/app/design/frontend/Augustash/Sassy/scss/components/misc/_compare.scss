@@ -1,0 +1,63 @@
+.header.content {
+
+  .compare.wrapper {
+
+    .action.compare {
+      @include button($type: primary, $outline: true);
+      padding: ($global-padding * 0.75) $global-padding;
+
+      &:active,
+      &:focus,
+      &:hover {
+        color: $white;
+
+        .counter.qty {
+          color: $white;
+        }
+      }
+
+      .counter.qty {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.block-compare {
+
+  .product-item-name {
+    font-size: rem-calc(22);
+  }
+
+  .action {
+
+    &.delete {
+      padding: 0;
+    }
+  }
+
+  .actions-toolbar {
+
+    .primary {
+      display: inline;
+
+      .action.compare {
+        box-shadow: none;
+      }
+    }
+
+    .secondary {
+      display: inline;
+      margin-left: $global-margin;
+
+      .action.clear {
+        @include button($type: primary, $outline: true);
+
+        &:active,
+        &:focus {
+          color: $white;
+        }
+      }
+    }
+  }
+}

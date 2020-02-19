@@ -1,0 +1,72 @@
+html button,
+body button,
+button,
+.button,
+.btn,
+[type='button'],
+html a.action,
+body a.action {
+  @include button($type: basic);
+
+  &.action.primary,
+  &.primary {
+    @include button($type: primary);
+  }
+
+  &.secondary {
+    @include button($type: secondary);
+  }
+
+  &.tocompare,
+  &.towishlist,
+  &.edit,
+  &.delete,
+  &.remove,
+  &.sorter-action {
+    padding: $global-padding / 4;
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &.print {
+    @include button($type: text);
+    @include icon($position: before, $icon: print);
+  }
+}
+
+.reviews-actions {
+
+  .action {
+    @include button($type: text);
+    color: $font-black;
+  }
+}
+
+.product-social-links {
+
+  .action {
+
+    &.tocompare,
+    &.towishlist {
+      @include button($type: text);
+    }
+  }
+}
+
+// Fix Magento jankiness
+.split.button,
+.minicart-wrapper a.showcart,
+.field.search a.action.advanced {
+  background: none;
+  padding: 0;
+
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    background: none;
+  }
+}

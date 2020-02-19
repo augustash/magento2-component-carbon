@@ -1,0 +1,83 @@
+
+.block.newsletter {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  width: auto;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+  }
+
+  .title {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 0;
+
+    @include breakpoint(medium) {
+      margin-right: $global-margin * 2;
+    }
+
+    strong {
+      margin: 0;
+    }
+  }
+
+  .content {
+
+    @include breakpoint(medium) {
+      width: 50%;
+    }
+
+    .form.subscribe {
+
+      input {
+        background-color: rgba($white, 0.3);
+        border-radius: $global-radius;
+        border-width: 0;
+        color: $white;
+        padding-left: $global-padding;
+
+        &::placeholder {
+          color: rgba($white, 0.5);
+        }
+
+        &:focus {
+          box-shadow: 0 0 3px 1px rgba($grey-offset, 0.4);
+        }
+      }
+
+      .control {
+
+        &:before {
+          display: none;
+        }
+      }
+
+      .action.subscribe {
+        @include icon($position: before, $icon: envelope) {
+          transition: color $global-speed;
+        }
+        background: transparent;
+        padding: 0;
+        border: 1px;
+        height: $global-padding * 3.2;
+        width: $global-padding * 3;
+        margin-left: $global-padding * -3.2;
+
+        > span {
+          @include visually-hidden;
+        }
+
+        &:hover {
+
+          &:before {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+}

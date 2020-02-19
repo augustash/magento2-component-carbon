@@ -1,0 +1,218 @@
+.checkout-index-index {
+
+  .authentication-wrapper {
+
+    .action.action-auth-toggle {
+      @include button($type: primary);
+      font-size: rem-calc(24);
+    }
+  }
+
+  .form-login,
+  .block-customer-login {
+
+    .actions-toolbar {
+
+      .primary {
+        float: none;
+
+        .action {
+
+          &.login,
+          &.action-login {
+            @include button($type: primary);
+            font-size: rem-calc(24);
+          }
+        }
+      }
+
+      .secondary {
+        float: none;
+        margin-right: 0;
+        padding-top: 0;
+
+        .action {
+
+          &.remind,
+          &.action-remind {
+            @include button($type: text);
+            font-size: rem-calc(24);
+          }
+        }
+      }
+    }
+  }
+
+  .opc-progress-bar {
+
+    .opc-progress-bar-item {
+
+      &._active {
+
+        &:before {
+          background: $primary-color;
+          border-color: $primary-color;
+        }
+
+        span {
+
+          &:before {
+            background: $primary-color;
+            border-color: $primary-color;
+          }
+
+          &:after {
+            border-color: $primary-color;
+          }
+        }
+      }
+
+      &._complete {
+
+        > span {
+          color: $body-font-color;
+        }
+      }
+    }
+  }
+
+  .opc-wrapper {
+
+    .shipping-address-item {
+
+      &.selected-item {
+        border-color: $primary-color;
+
+        &:after {
+          background: $primary-color;
+        }
+      }
+
+      .action {
+
+        &.action-select-shipping-item {
+          @include button($type: primary, $outline: true);
+        }
+
+        &.edit-address-link {
+          @include button($type: text);
+          padding: 0;
+
+          @media (max-width: 768px) {
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .new-address-popup {
+
+      .action {
+        @include button($type: primary, $outline: true);
+      }
+    }
+  }
+
+  .modal-popup {
+
+    .modal-footer {
+
+      .action {
+
+        &.action-hide-popup {
+          @include button($type: text);
+        }
+      }
+    }
+  }
+
+  .checkout-payment-method {
+
+    .checkout-billing-address {
+
+      input[type='checkbox'] {
+        position: relative;
+        top: 0;
+      }
+
+      .action {
+
+        &.action-edit-address {
+          @include button($type: text);
+          padding: 0;
+        }
+      }
+
+      .actions-toolbar {
+
+        .primary {
+          float: none;
+
+          .action {
+
+            &.action-update {
+              @include button($type: primary);
+              float: left;
+              font-size: rem-calc(20);
+            }
+
+            &.action-cancel {
+              @include button($type: text);
+              float: left;
+              font-size: rem-calc(20);
+            }
+          }
+        }
+      }
+    }
+
+    .payment-option-title {
+
+      .action-toggle {
+        color: $body-font-color;
+      }
+    }
+
+    .discount-code {
+
+      .actions-toolbar {
+
+        .primary {
+
+          .action {
+            @include button($type: primary);
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkout-onepage-success {
+
+  .page-title-wrapper {
+
+    .print {
+      @include icon($position: before, $icon: print);
+    }
+  }
+
+  .checkout-success {
+
+    .action {
+
+      &.primary.continue {
+        @include button($type: primary, $outline: true);
+      }
+    }
+  }
+
+  form {
+
+    .action.primary,
+    input[type='submit'] {
+      @include button($type: primary, $large: true);
+    }
+  }
+}

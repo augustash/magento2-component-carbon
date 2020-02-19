@@ -1,0 +1,10 @@
+
+.block.block-products-list {
+  @include spacing;
+  @include set-grid-container;
+
+  > .block-title {
+    @include spacing($type: padding);
+    text-align: center;
+  }
+}

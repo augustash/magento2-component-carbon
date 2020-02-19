@@ -1,0 +1,85 @@
+// All sorts of importants in here as the module itself is adding them as well.
+.ammenu-nav-sections {
+  background-color: $black;
+
+  .ammenu-title {
+    background-color: $primary-color !important; /* stylelint-disable-line declaration-no-important */
+    width: 50%;
+    transition: background-color $global-speed;
+
+    &.active {
+      background-color: $black !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
+  .ammenu-tabs-container {
+    background-color: $white;
+
+    > .ammenu-content {
+      background-color: $black !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+}
+
+.ammenu-menu-overlay {
+  background-color: rgba($grey-overlay, 0.9);
+
+  &:after {
+    content: 'X';
+    position: absolute;
+    top: $global-padding;
+    right: $global-padding;
+    border: 2px solid $white;
+    border-radius: 50%;
+    padding: $global-padding;
+    width: $global-padding * 2.5;
+    height: $global-padding * 2.5;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: $global-padding * 2.25;
+    font-weight: bold;
+    color: $white;
+    cursor: pointer;
+    transition: color $global-speed, background-color $global-speed;
+
+    &:hover {
+      background-color: $white;
+      color: $primary-color;
+    }
+  }
+}
+
+.ammenu-menu-toggle {
+
+  .ammenu-icon {
+    border-color: $white !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+.ammenu-menu-wrapper {
+
+  &.-mobile {
+
+    .ammenu-item {
+      border: 0;
+    }
+
+    .ammenu-link {
+      color: $grey-offset !important; /* stylelint-disable-line declaration-no-important */
+
+      &.-main {
+        background: transparent !important; /* stylelint-disable-line declaration-no-important */
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    .ammenu-submenu {
+      background: transparent !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+}
