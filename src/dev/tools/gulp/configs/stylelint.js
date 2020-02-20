@@ -6,10 +6,17 @@
  */
 
 /**
- * ESLint config.
+ * Styleint config.
  */
 export default {
-  configFile: "dev/tools/gulp/configs/.eslintrc.example",
-  fix: false,
-  useEslintrc: false
+  clearReportedMessages: true,
+  debug: true,
+  failAfterError: true,
+  reporters: [
+    {
+      formatter: 'string',
+      console: true
+    },
+  ],
+  throwError: true,
 };

@@ -1,0 +1,137 @@
+// ------------------------------------------------------------------------------
+// VARIABLES
+// ------------------------------------------------------------------------------
+
+// global
+$global-padding: 1rem;
+$global-margin: 1rem;
+$global-width: rem-calc(1440);
+$grid-container: rem-calc(1440);
+$global-radius: 4px;
+$global-lineheight: 1.4;
+$global-header-lineheight: 1;
+$grid-column-gutter: (
+  small: 40px,
+  medium: 60px,
+);
+$column-gutter: rem-calc(30);
+$header-height: rem-calc(96);
+
+// global colors
+$white: rgba(255, 255, 255, 1);
+$white-smoke-light: rgba(248, 248, 248, 1);
+$black: rgba(51, 51, 51, 1);
+$red: rgba(182, 48, 41, 1);
+$grey-light: rgb(236, 237, 241);
+$grey: rgba(51, 51, 51, 1);
+$grey-text: rgba(51, 62, 72, 1);
+$grey-dark: rgba(0, 0, 0, 0.2);
+$grey-lighter: rgba(216, 216, 216, 1);
+$grey-bt: rgba(84, 94, 102, 1);
+$grey-bd: rgba(67, 75, 82, 1);
+$grey-shadow: rgba(185, 185, 185, 1);
+$green: rgba(67, 172, 106, 1);
+$orange: rgba(242, 132, 17, 1);
+$yellow: rgba(227, 176, 0, 1);
+$dark-green: rgba(13, 99, 0, 1);
+$blue-dark: rgba(1, 33, 89, 1);
+$blue-light: rgba(0, 120, 201, 1);
+$blue: rgba(0, 81, 155, 1);
+$blue-shadow: rgba(0, 58, 104, 1);
+$blue-sky: rgba(200, 223, 238, 1);
+$aai-blue: rgba(52, 184, 226, 1);
+$aai-blue-alt: rgba(28, 151, 193, 1);
+
+// theme colors
+$primary-color: $aai-blue;
+$secondary-color: $aai-blue-alt;
+$content-background: $white;
+$header-font-color: $grey-text;
+$background-grey: $grey-light;
+$background-light-grey: $grey-light;
+$special-price-green: $green;
+$background-black: rgba(34, 30, 31, 1);
+$font-black: $grey-text;
+$breadcrumb-grey: rgba(236, 237, 241, 1);
+$hover-red: rgba(242, 98, 100, 1);
+$text-white: $white;
+$nav-text: $grey-text;
+$nav-hover: rgba(35, 31, 32, 1);
+$category-hover: rgba(9, 113, 178, 1);
+$footer-background: $blue-dark;
+$footer-text: $grey-lighter;
+$footer-line: rgba(255, 255, 255, 0.15);
+
+// social media colors
+$facebook: rgba(70, 101, 172, 1);
+$twitter: rgba(5, 159, 245, 1);
+$linkedin: rgba(0, 118, 183, 1);
+$instagram: rgba(253, 126, 20, 1);
+$googleplus: rgba(211, 72, 54, 1);
+
+$foundation-palette: (
+  primary: rgba(33, 153, 232, 1),
+  secondary: rgba(119, 119, 119, 1),
+  success: rgba(93, 164, 35, 1),
+  warning: rgba(227, 176, 0, 1),
+  alert: rgba(198, 15, 19, 1),
+);
+
+// typography
+$font-format: otf eot woff woff2;
+$global-font-size: 100%;
+$body-font-color: $font-black;
+$light-font-weight: 300;
+$book-font-weight: 400;
+$medium-font-weight: 500;
+$bold-font-weight: 700;
+$header-font-family: 'Open Sans', arial, sans-serif;
+$body-font-family: 'Open Sans', arial, sans-serif;
+$semi-bold-font-family: 'Open Sans', arial, sans-serif;
+$italic-font-family: 'Open Sans', arial, sans-serif;
+$monospace-font-family: Menlo, 'Courier New', monospace;
+
+$header-sizes: (
+  small: (
+    'h1': ('font-size': 32),
+    'h2': ('font-size': 24),
+    'h3': ('font-size': 28),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 18),
+    'h6': ('font-size': 17),
+  ),
+  medium: (
+    'h1': ('font-size': 42),
+    'h2': ('font-size': 32),
+    'h3': ('font-size': 28),
+    'h4': ('font-size': 20),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 17),
+  ),
+  large: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 42),
+    'h3': ('font-size': 36),
+    'h4': ('font-size': 30),
+    'h5': ('font-size': 24),
+    'h6': ('font-size': 20),
+  ),
+);
+
+// buttons
+$button-padding: 1rem;
+$button-color-alt: $white;
+$button-radius: 3px;
+$global-speed: 350ms;
+
+// forms
+$input-transition: box-shadow 300ms, border-color 300ms ease-in-out;
+$input-radius: 0;
+$input-padding: 1rem;
+$input-border: 0;
+$input-border-focus: 0;
+$input-shadow: none;
+$input-shadow-focus: 0 2px 5px rgba($grey-light, 0.33);
+
+// borders
+$global-border-width: 1px;

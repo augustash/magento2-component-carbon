@@ -1,0 +1,44 @@
+// ------------------------------------------------------------------------------
+// TYPOGRAPHY
+// ------------------------------------------------------------------------------
+
+::selection {
+  background: $primary-color;
+  color: $white;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+body {
+  font-family: $body-font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $semi-bold-font-family;
+}
+
+a,
+.alink {
+  color: $primary-color;
+  transition: color $global-speed;
+
+  &:visited {
+    color: $primary-color;
+
+    &:hover {
+      color: darken($primary-color, 20);
+    }
+  }
+
+  &:hover {
+    color: darken($primary-color, 20);
+    text-decoration: none;
+  }
+}

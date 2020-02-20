@@ -1,0 +1,11 @@
+.breadcrumbs a {
+  color: $primary-color;
+
+  &:visited {
+    color: $primary-color;
+  }
+
+  &:hover {
+    color: darken($primary-color, 20);
+  }
+}

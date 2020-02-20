@@ -1,0 +1,22 @@
+/**
+ * Sass-based Boilerplate Frontend Theme
+ *
+ * @author    Peter McWilliams <pmcwilliams@augustash.com>
+ * @copyright Copyright (c) 2020 August Ash (https://www.augustash.com)
+ */
+
+import { parallel, series } from 'gulp';
+import { browserSyncTask } from './dev/tools/gulp/tasks/browser-sync';
+import { cleanTask } from './dev/tools/gulp/tasks/clean';
+import { javascriptTask } from './dev/tools/gulp/tasks/javascript';
+import { lintScssTask } from './dev/tools/gulp/tasks/lint-scss';
+import { stylesheetsTask } from './dev/tools/gulp/tasks/stylesheets';
+import { watchTask } from './dev/tools/gulp/tasks/watch';
+
+export const build = series(cleanTask, parallel(series(lintScssTask, stylesheetsTask), javascriptTask));
+export const clean = cleanTask;
+export const css = series(cleanTask, lintScssTask, stylesheetsTask);
+export const js = series(cleanTask, javascriptTask);
+export const lintScss = lintScssTask;
+export const serve = series(parallel(series(lintScssTask, stylesheetsTask), javascriptTask), browserSyncTask, watchTask);
+export const watch = watchTask;

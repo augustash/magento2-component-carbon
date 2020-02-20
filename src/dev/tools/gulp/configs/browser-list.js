@@ -6,10 +6,13 @@
  */
 
 /**
- * ESLint config.
+ * Browser List config.
  */
 export default {
-  configFile: "dev/tools/gulp/configs/.eslintrc.example",
-  fix: false,
-  useEslintrc: false
+  prefixes: [
+    'last 2 versions',
+    '> 1%',
+    'ie 9',
+    'ie 10',
+  ]
 };

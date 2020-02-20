@@ -1,10 +1,9 @@
 {
-    "name": "augustash/sassy",
+    "name": "augustash/carbon",
+    "description": "A Sass-based boilerplate theme for Magento 2.",
     "type": "magento2-component",
-    "license": [
-        "proprietary"
-    ],
     "version": "0.9.0",
+    "license": "MIT",
     "config": {
         "sort-packages": true
     },
@@ -14,8 +13,48 @@
     "extra": {
         "map": [
             [
-                "src/",
-                "."
+                "src/gulp-config.json.example",
+                "gulp-config.json.example"
+            ],
+            [
+                "src/Gulpfile.esm.js.example",
+                "Gulpfile.esm.js.example"
+            ],
+            [
+                "src/package.json",
+                "package.json"
+            ],
+            [
+                "src/stylelint.config.js",
+                "stylelint.config.js"
+            ],
+            [
+                "src/yarn.lock",
+                "yarn.lock"
+            ],
+            [
+                "src/app/design/frontend/Augustash/carbon",
+                "app/design/frontend/Augustash/carbon"
+            ],
+            [
+                "src/dev/tools/gulp/configs",
+                "dev/tools/gulp/configs"
+            ],
+            [
+                "src/dev/tools/gulp/sources",
+                "dev/tools/gulp/sources"
+            ],
+            [
+                "src/dev/tools/gulp/tasks",
+                "dev/tools/gulp/tasks"
+            ],
+            [
+                "src/dev/tools/gulp/tools",
+                "dev/tools/gulp/tools"
+            ],
+            [
+                "src/dev/tools/gulp/.editorconfig",
+                "dev/tools/gulp/.editorconfig"
             ]
         ]
     }

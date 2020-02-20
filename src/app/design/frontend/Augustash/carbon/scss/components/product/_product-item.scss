@@ -1,0 +1,39 @@
+.product,
+.product-item {
+
+  .name,
+  .product-item-name {
+    font-size: rem-calc(24);
+
+    a {
+      font-weight: $bold-font-weight;
+
+      &:hover,
+      &:visited {
+        color: $body-font-color;
+      }
+    }
+  }
+
+  .action.more {
+    @include button($type: primary, $outline: true);
+  }
+}
+
+.swatch-attribute-options {
+
+  .swatch-option {
+
+    &.image:not(.disabled),
+    &.color:not(.disabled) {
+
+      &:hover {
+        outline: 2px solid $primary-color;
+      }
+    }
+
+    &.selected {
+      outline: 2px solid $primary-color;
+    }
+  }
+}
