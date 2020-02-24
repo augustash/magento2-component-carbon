@@ -9,22 +9,20 @@ import { series, watch } from 'gulp';
 import { javascriptTask } from '../tasks/javascript';
 import { lintScssTask } from '../tasks/lint-scss';
 import { stylesheetsTask } from '../tasks/stylesheets';
-import { themes } from '../tools/config';
 import browserSyncLib from 'browser-sync';
-import path from 'path';
+import sourceLoader from '../tools/source-loader';
 import themeLoader from '../tools/theme-loader';
 
 export const watchTask = () => {
   const browserSync = browserSyncLib.create();
   themeLoader().forEach(name => {
-    const theme = themes[name];
-    const themeScssGlob = path.join(theme.src, theme.scssDir || 'scss/**/*.scss');
-    const themeJsGlob = path.join(theme.src, theme.jsDir || 'js/**/*.js');
+    let themeScssPaths = sourceLoader(name, 'scss');
+    let themeJsPaths = sourceLoader(name, 'js');
 
-    watch(themeScssGlob, series(lintScssTask, stylesheetsTask))
+    watch(themeScssPaths, series(lintScssTask, stylesheetsTask))
       .on('change', browserSync.reload);
 
-    watch(themeJsGlob, javascriptTask)
+    watch(themeJsPaths, javascriptTask)
       .on('change', browserSync.reload);
   });
 }

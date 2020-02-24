@@ -14,14 +14,13 @@ import gulpIf from 'gulp-if';
 import path from 'path';
 import uglify from 'gulp-uglify';
 
-export default (name) => {
+export default (name, themeSrcPaths) => {
   const browserSync = browserSyncLib.create();
   const theme = themes[name];
-  const themeSrcPath = path.join(projectRoot, theme.src, theme.jsDir || 'js/**/*.js');
   const themeDestPath = path.join(projectRoot, theme.dest, 'js/');
   const outputName = theme.outputName || 'theme';
 
-  return src(themeSrcPath, { sourcemaps: theme.sourceMaps || false })
+  return src(themeSrcPaths, { sourcemaps: theme.sourceMaps || false })
     .pipe(eslint(eslintConfig))
     .pipe(eslint.format())
     .pipe(uglify())

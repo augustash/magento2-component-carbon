@@ -6,12 +6,12 @@
  */
 
 /**
- * Styleint config.
+ * Stylelint config.
  */
 export default {
   clearReportedMessages: true,
   debug: true,
-  failAfterError: true,
+  failAfterError: false,
   reporters: [
     {
       formatter: 'string',

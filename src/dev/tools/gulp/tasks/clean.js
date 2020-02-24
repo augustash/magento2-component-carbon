@@ -5,12 +5,23 @@
  * @copyright Copyright (c) 2020 August Ash (https://www.augustash.com)
  */
 
+import { projectRoot, themes } from '../tools/config';
 import del from 'del';
-import { projectRoot } from '../tools/config';
+import path from 'path';
+import themeLoader from '../tools/theme-loader';
 
 export const cleanTask = () => {
-  return del([
-    projectRoot + 'pub/static/**',
-    '!' + projectRoot + 'pub/static/.htaccess'
-  ]);
+  let cleanPaths = [];
+
+  themeLoader().forEach(name => {
+    const theme = themes[name];
+    const outputName = theme.outputName + '.*' || 'theme.*';
+    cleanPaths.push(path.join(projectRoot, theme.dest, 'css/', outputName));
+    cleanPaths.push(path.join(projectRoot, theme.dest, 'js/', outputName));
+  });
+
+  cleanPaths.push(path.join(projectRoot, 'pub/static/**'));
+  cleanPaths.push(path.join('!', projectRoot, 'pub/static/.htaccess'));
+
+  return del(cleanPaths);
 }

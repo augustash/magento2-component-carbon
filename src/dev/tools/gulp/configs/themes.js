@@ -17,5 +17,6 @@ export default {
     outputName: 'theme',
     outputStyle: 'compressed',
     sourceMaps: true,
+    parent: null,
   },
 };

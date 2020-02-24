@@ -14,14 +14,13 @@ import path from 'path';
 import sass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
 
-export default (name) => {
+export default (name, themeSrcPaths) => {
   const browserSync = browserSyncLib.create();
   const theme = themes[name];
-  const themeSrcPath = path.join(projectRoot, theme.src, theme.scssDir || 'scss/**/*.scss');
   const themeDestPath = path.join(projectRoot, theme.dest, 'css/');
   const outputName = theme.outputName || 'theme';
 
-  return src(themeSrcPath, { sourcemaps: theme.sourceMaps || false })
+  return src(themeSrcPaths, { sourcemaps: theme.sourceMaps || false })
     .pipe(sassGlob())
     .pipe(sass({
       errLogToConsole: true,

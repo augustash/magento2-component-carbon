@@ -6,14 +6,12 @@
  */
 
 import { src } from 'gulp';
-import { projectRoot, stylelintConfig, themes } from '../tools/config';
-import path from 'path';
+import { stylelintConfig, themes } from '../tools/config';
 import stylelint from 'gulp-stylelint';
 
-export default (name) => {
+export default (name, themeSrcPaths) => {
   const theme = themes[name];
-  const themeSrcPath = path.join(projectRoot, theme.src, theme.scssDir || 'scss/**/*.scss');
 
-  return src(themeSrcPath, { sourcemaps: theme.sourceMaps || false })
+  return src(themeSrcPaths, { sourcemaps: theme.sourceMaps || false })
     .pipe(stylelint(stylelintConfig));
 };

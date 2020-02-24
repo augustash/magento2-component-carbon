@@ -7,12 +7,14 @@
 
 import mergeStream from 'merge-stream'
 import source from '../sources/javascript';
-import themes from '../tools/theme-loader';
+import sourceLoader from '../tools/source-loader';
+import themeLoader from '../tools/theme-loader';
 
 export const javascriptTask = () => {
   const streams = mergeStream();
-  themes().forEach(name => {
-    streams.add(source(name));
+  themeLoader().forEach(name => {
+    let sourcePaths = sourceLoader(name, 'js');
+    streams.add(source(name, sourcePaths));
   });
   return streams;
 }
