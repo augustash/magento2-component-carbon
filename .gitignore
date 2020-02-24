@@ -1,4 +1,5 @@
 /**/node_modules/
+/package.json
 /report.json
 /src/app/design/frontend/Augustash/carbon/web/*
 !/src/app/design/frontend/Augustash/carbon/web/fonts/

@@ -21,8 +21,8 @@
                 "Gulpfile.esm.js.example"
             ],
             [
-                "src/package.json",
-                "package.json"
+                "src/package.json.example",
+                "package.json.example"
             ],
             [
                 "src/stylelint.config.js",
