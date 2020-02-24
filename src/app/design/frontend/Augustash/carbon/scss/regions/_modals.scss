@@ -1,0 +1,13 @@
+.modal-popup {
+
+  .modal-footer {
+
+    .action-primary {
+      @include button($type: primary);
+    }
+
+    .action-secondary {
+      @include button ($type: primary, $outline: true);
+    }
+  }
+}

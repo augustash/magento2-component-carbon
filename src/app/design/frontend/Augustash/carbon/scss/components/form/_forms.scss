@@ -1,0 +1,15 @@
+form,
+.form {
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    position: relative;
+    top: 0;
+  }
+
+  .action.submit,
+  .action.save,
+  input[type='submit'] {
+    font-size: rem-calc(24);
+  }
+}

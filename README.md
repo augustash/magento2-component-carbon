@@ -20,18 +20,18 @@ Install the components using Composer from our development package repository:
 
 ```bash
 composer config repositories.augustash composer https://packages.augustash.com/repo/private
-composer require augustash/magento2-sassy:~0.9.0
+composer require augustash/carbon:~0.9.0
 ```
 
 Next follow these initial configuration steps:
 
 1. Change directories to your project's source root - `cd ~/Project/magento2/src`
 2. Install dependencies - `yarn install`
-3. Create initial Gulp task file - `cp Gulpfile.js.example Gulpfile.js`
+3. Create initial Gulp task file - `cp Gulpfile.esm.js.example Gulpfile.esm.js`
 4. Create initial Gulp configuration file - `cp gulp-config.json.example gulp-config.json`
-5. Create local theme configuration file - `cp dev/gulp/configs/themes.js dev/gulp/configs/themes-local.js`
-6. Create local BrowserSync configuration file - `cp dev/gulp/configs/browser-sync.js dev/gulp/configs/browser-sync-local.js`
-7. Customize configuration as your project demands - `gulp-config.json`, `themes-local.js`, `browser-sync-local.js`
+5. Create local configuration files - `cp dev/gulp/configs/themes.js dev/gulp/configs/themes.local.js`
+6. Customize configuration as your project demands - `gulp-config.json`, `themes.local.js`, `browser-sync.local.js`
+7. Set your project `.gitignore` to ignore the generated CSS files
 
 ## Running Gulp
 
@@ -39,17 +39,25 @@ Running Gulp will build your project's assets and start a watcher by default. Th
 
 ```bash
 cd ~/Project/magento2/src
-./node_modules/.bin/gulp
+./node_modules/.bin/gulp -T
 ```
 
 The following Gulp tasks are available:
 
 * `build` - Runs CSS/JS linting and compiles your Sass and Javascript
+    * `--theme name` - Processes a single theme
+* `clean` - Removes static assets from public directory
+    * `--theme name` - Processes a single theme
 * `css` - Runs CSS linting and compiles your Sass
-* `javascript` - Runs JS linting and compiles your Javascript
-* `lintCss` - Runs CSS linting process to validate Sass matches our custom lint rules
+    * `--theme name` - Processes a single theme
+* `js` - Runs JS linting and compiles your Javascript
+    * `--theme name` - Processes a single theme
+* `lintScss` - Runs CSS linting process to validate Sass matches our custom lint rules
+    * `--theme name` - Processes a single theme
 * `serve` - Runs the `build` process and starts BrowserSync with a watcher for changes
-* `watcher` - Runs a watcher for Sass/JS changes
+    * `--theme name` - Processes a single theme
+* `watch` - Runs a watcher for Sass/JS changes
+    * `--theme name` - Processes a single theme
 
 ## Component Structure
 
@@ -61,7 +69,7 @@ magento2-project-source
 │   └── design
 │       └── frontend
 │           └── Augustash
-│               └── Sassy
+│               └── carbon
 │                   ├── etc
 │                   ├── i18n
 │                   ├── Magento_Theme
@@ -78,15 +86,23 @@ magento2-project-source
 │   └── tools
 │       └── gulp
 │           ├── configs
-│           │   ├── browser-sync.js
-│           │   ├── eslintrc.js
+│           │   ├── ...
 │           │   └── themes.js
+│           ├── sources
+│           │   ├── ...
+│           │   └── stylesheets.js
+│           ├── tasks
+│           │   ├── ...
+│           │   └── watch.js
 │           ├── tools
-│           │   └── config-loader.js
-│           ├── .editorconfig
-│           └── README.md
+│           │   └── theme-loader.js
+│           └── .editorconfig
 ├── gulp-config.json.example
-├── Gulpfile.js
+├── Gulpfile.esm.js
 ├── package.json
 └── stylelint.config.js
 ```
+
+## Thanks
+
+Much of the inspiration and code has been gleaned and tweaked from the team at [SnowdogApps](https://github.com/SnowdogApps/magento2-frontools).

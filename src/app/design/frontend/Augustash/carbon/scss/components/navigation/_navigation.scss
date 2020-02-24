@@ -1,0 +1,77 @@
+.nav-sections {
+
+  .navigation {
+
+    .level0 {
+
+      &.active,
+      &.has-active {
+
+        > .level-top {
+          color: $primary-color;
+          border-color: $primary-color;
+        }
+
+        > a:not(.ui-state-active) {
+          border-color: $primary-color;
+        }
+      }
+
+      &.last {
+        @media (max-width: 768px) {
+
+          > .level-top {
+            color: $body-font-color;
+
+            &:visited {
+              color: $body-font-color;
+            }
+          }
+        }
+      }
+
+      .submenu {
+
+        .active {
+
+          > a {
+            border-color: $primary-color;
+          }
+        }
+
+        .parent {
+
+          a {
+            color: $body-font-color;
+
+            &:visited {
+              color: $body-font-color;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header.links {
+
+    li {
+      @media (max-width: 768px) and (pointer: coarse) {
+        font-size: rem-calc(22);
+      }
+    }
+  }
+}
+
+.block-collapsible-nav {
+
+  .item {
+
+    &.current {
+
+      a {
+        border-color: $primary-color;
+      }
+    }
+  }
+}

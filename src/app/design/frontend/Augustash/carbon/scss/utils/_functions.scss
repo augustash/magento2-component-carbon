@@ -1,0 +1,16 @@
+// ------------------------------------------------------------------------------
+// FUNCTIONS
+// ------------------------------------------------------------------------------
+
+// map deep get
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// retrieve color and set its opacity.
+@function alpha($color, $amount: 0.5) {
+  @return rgba($color, $amount);
+}

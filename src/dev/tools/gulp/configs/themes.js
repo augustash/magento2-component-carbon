@@ -5,45 +5,18 @@
  * @copyright Copyright (c) 2020 August Ash (https://www.augustash.com)
  */
 
-'use strict';
-
 /**
  * Defined themes.
  */
-module.exports = {
-  dest: {
-    css: 'app/design/frontend/Augustash/Sassy/web/css/',
-    js: 'app/design/frontend/Augustash/Sassy/web/js/',
+export default {
+  carbon: {
+    dest: 'app/design/frontend/Augustash/carbon/web/',
+    src: 'app/design/frontend/Augustash/carbon/',
+    jsDir: 'js/**/*.js',
+    scssDir: 'scss/**/*.scss',
+    outputName: 'theme',
+    outputStyle: 'compressed',
+    sourceMaps: true,
+    parent: null,
   },
-  themes: [
-    {
-      area: 'frontend',
-      name: 'Augustash/Sassy',
-      css: {
-        src: [
-          'scss/**/*.scss',
-          'styles/**/*.scss',
-        ]
-      },
-      js: {
-        src: [
-          'js/**/*.js'
-        ]
-      }
-    },
-    {
-      area: 'frontend',
-      name: 'Heatwagon/Default',
-      css: {
-        src: [
-          'scss/**/*.scss'
-        ]
-      },
-      js: {
-        src: [
-          'js/**/*.js'
-        ]
-      }
-    }
-  ]
 };

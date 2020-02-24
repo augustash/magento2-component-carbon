@@ -1,3 +1,5 @@
+<?php
+
 /**
  * Sass-based Boilerplate Frontend Theme
  *
@@ -5,11 +7,8 @@
  * @copyright Copyright (c) 2020 August Ash (https://www.augustash.com)
  */
 
-/**
- * ESLint config.
- */
-export default {
-  configFile: "dev/tools/gulp/configs/.eslintrc.example",
-  fix: false,
-  useEslintrc: false
-};
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::THEME,
+    'frontend/Augustash/carbon',
+    __DIR__
+);

@@ -5,21 +5,17 @@
  * @copyright Copyright (c) 2020 August Ash (https://www.augustash.com)
  */
 
-'use strict';
-
 /**
- * BrowserSync Config.
+ * BrowserSync config.
  */
-module.exports = {
-  browserSync: {
-    enabled: false,
-    notify: false,
-    openAutomatically: false,
-    port: 3000,
-    proxy: "https://b2c.heatwagon.test",
-    ssl: {
-      cert: "/usr/local/etc/nginx/ssl/localhost.pem",
-      key: "/usr/local/etc/nginx/ssl/localhost.key",
-    }
-  }
+export default {
+  enabled: false,
+  notify: false,
+  openAutomatically: false,
+  port: 3000,
+  proxy: "https://localhost",
+  ssl: {
+    cert: "/usr/local/etc/nginx/ssl/localhost.pem",
+    key: "/usr/local/etc/nginx/ssl/localhost.key",
+  },
 };

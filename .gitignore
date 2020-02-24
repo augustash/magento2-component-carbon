@@ -1,3 +1,8 @@
 /**/node_modules/
 /report.json
-/src/app/design/frontend/Augustash/Sassy/web/
+/src/app/design/frontend/Augustash/carbon/web/
+/src/dev/tools/gulp/configs/*.local.js
+/src/gulp-config.json
+/src/Gulpfile.esm.js
+/src/Gulpfile.js
+/yarn-error.log
