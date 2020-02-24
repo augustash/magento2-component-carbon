@@ -69,6 +69,7 @@ $linkedin: rgba(0, 118, 183, 1);
 $instagram: rgba(253, 126, 20, 1);
 $googleplus: rgba(211, 72, 54, 1);
 
+// palette
 $foundation-palette: (
   primary: rgba(33, 153, 232, 1),
   secondary: rgba(119, 119, 119, 1),
@@ -80,17 +81,20 @@ $foundation-palette: (
 // typography
 $font-format: otf eot woff woff2;
 $global-font-size: 100%;
-$base-font-size: 10px;
 $body-font-color: $font-black;
 $light-font-weight: 300;
 $book-font-weight: 400;
 $medium-font-weight: 500;
 $bold-font-weight: 700;
-$header-font-family: 'Open Sans', arial, sans-serif;
-$body-font-family: 'Open Sans', arial, sans-serif;
-$semi-bold-font-family: 'Open Sans', arial, sans-serif;
-$italic-font-family: 'Open Sans', arial, sans-serif;
-$monospace-font-family: Menlo, 'Courier New', monospace;
+$header-font-family: calibre-semibold, 'Arial', sans-serif;
+$body-font-family: calibre-regular, 'Arial', sans-serif;
+$semi-bold-font-family: calibre-semibold, 'Arial', sans-serif;
+$italic-font-family: calibre-italic, 'Arial', sans-serif;
+$header-font-family: 'Open Sans', 'Arial', sans-serif;
+$body-font-family: 'Open Sans', 'Arial', sans-serif;
+$semi-bold-font-family: 'Open Sans', 'Arial', sans-serif;
+$italic-font-family: 'Open Sans', 'Arial', sans-serif;
+$monospace-font-family: 'Menlo', 'Courier New', monospace;
 
 $header-sizes: (
   small: (

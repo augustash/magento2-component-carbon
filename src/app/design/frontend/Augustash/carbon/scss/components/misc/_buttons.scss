@@ -23,8 +23,8 @@ body a.action {
   &.delete,
   &.remove,
   &.sorter-action {
-    padding: $global-padding / 4;
     background: transparent;
+    padding: $global-padding / 4;
 
     &:hover {
       background: transparent;

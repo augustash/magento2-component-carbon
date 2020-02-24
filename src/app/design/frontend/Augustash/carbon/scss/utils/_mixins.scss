@@ -2,7 +2,6 @@
 // MIXINS
 // ------------------------------------------------------------------------------
 
-// typography
 @mixin header-size($type) {
   font-size: rem-calc(map-deep-get($header-sizes, small, $type, font-size));
   font-weight: 400;
@@ -18,25 +17,22 @@
 
 @mixin button-base {
   background: $grey-light;
+  border-radius: $global-radius;
   border: $global-border-width solid transparent;
-  border-radius: 0;
   box-shadow: none;
   color: $grey-text;
   cursor: pointer;
   display: inline-block;
-  font-family: $semi-bold-font-family;
-  font-weight: normal;
-  font-size: rem-calc(14, $base-font-size);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  line-height: 1;
+  font-family: $body-font-family;
+  font-size: rem-calc(18);
+  font-weight: 400;
+  line-height: normal;
   margin: 0;
-  padding: ($global-padding) ($global-padding * 2);
+  padding: ($global-padding / 2) ($global-padding * 2);
   position: relative;
   text-align: center;
   text-decoration: none;
   width: auto;
-  transition: background-color $global-speed;
 
   &:visited,
   &:active,
@@ -46,27 +42,24 @@
   }
 
   &:hover {
+    background: $grey;
     border: $global-border-width solid transparent;
     color: $grey-light;
-    background: $grey;
     cursor: pointer;
   }
 }
 
-/**
- * button - 4 style combinations
- *
- * @param {Keyword} $type [primary secondary basic text] - Button importance/hierarchy. Accepts `primary`, `secondary`, `basic`, `text`
- * @param {Boolean} $outline - Apply outline styling
- * @param {Boolean} $reverse - Reverse the button's background color and text color
- * @param {Boolean} $large - increase the button size
- */
+/// Four-style Button Combination
+///
+/// @param {Keyword} $type - Button importance/hierarchy. Accepts `primary`, `secondary`, `basic`, `text`
+/// @param {Boolean} $outline - Apply outline styling
+/// @param {Boolean} $reverse - Reverse the button's background color and text color
+/// @param {Boolean} $large - Increase the button size
 @mixin button($type: basic, $outline: false, $reverse: false, $large: false) {
   @include button-base;
 
   @if $large == true {
     padding: $global-padding ($global-padding * 3);
-    font-size: rem-calc(32);
   }
 
   @if ($type == 'primary') {
@@ -152,16 +145,14 @@
   }
 
   @if ($type == 'text') {
-    border: $global-border-width solid transparent;
     background: transparent;
+    border: $global-border-width solid transparent;
     color: $primary-color;
-    font-size: rem-calc(14, $base-font-size);
-    transition: color $global-speed;
 
     &:hover {
       background: transparent;
       border-color: transparent;
-      color: $secondary-color;
+      color: darken($primary-color, 10);
     }
 
     &:visited,
@@ -173,8 +164,8 @@
 
   @if ($outline == true) {
     background-color: transparent;
-    color: $primary-color;
     border: $global-border-width solid rgba($primary-color, 0.5);
+    color: $primary-color;
 
     &:visited,
     &:active,
@@ -192,21 +183,15 @@
   @content;
 }
 
-/**
- * Root level component spacing
- *
- * @param {Keyword} $type [margin] - Type of spacing to output. Accepts either margin or padding.
- */
-@mixin spacing(
-  $position: top bottom,
-  $multiplier: 1,
-  $type: margin
-) {
-
+/// Root-level Component Spacing
+///
+/// @param {List} $position - The position to apply spacing to. Accepts `top`, `bottom`, `left`, `right` in any combination.
+/// @param {Float} $multiplier
+/// @param {Keyword} $type - Type of spacing to output. Accepts either margin or padding.
+@mixin spacing($position: top bottom, $multiplier: 1, $type: margin) {
   @if ($type == 'margin') {
     $margin: $global-margin;
 
-    // Loop through each gutter position
     @each $value in $position {
       #{$type}-#{$value}: ($margin * 2) * $multiplier;
 
@@ -215,7 +200,7 @@
       }
 
       @include breakpoint(large) {
-        #{$type}-#{$value}: ($margin * 5) * $multiplier;
+        #{$type}-#{$value}: ($margin * 3.5) * $multiplier;
       }
     }
   }
@@ -223,7 +208,6 @@
   @if ($type == 'padding') {
     $padding: $global-padding;
 
-    // Loop through each gutter position
     @each $value in $position {
       #{$type}-#{$value}: ($padding * 2) * $multiplier;
 
@@ -238,9 +222,14 @@
   }
 }
 
-// Font Face
-// Generates the proper font styles from a linked font file(s).
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff) { // eot woff2 woff ttf svg
+/// Font Face Generation
+///
+/// @param {String} $name
+/// @param {String} $path
+/// @param {*} $weight
+/// @param {Keyword} $style
+/// @param {List} $exts - Extensions
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
   $src: null;
 
   $extmods: (
@@ -248,48 +237,55 @@
     svg: '#' + str-replace($name, ' ', '_')
   );
 
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
   @each $ext in $exts {
     $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
     $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);  /* stylelint-disable-line function-url-quotes */
+    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma); /* stylelint-disable-line function-url-quotes */
   }
 
   @font-face {
+    font-display: swap;
     font-family: quote($name);
     font-style: $style;
     font-weight: $weight;
     src: $src;
-    font-display: swap;
   }
 }
 
-// fontawesome icon
-@mixin icon($position: before, $icon: false, $styles: true, $font-family: 'FontAwesome' ) {
+/// Fontawesome Icon
+///
+/// @param {Keyword} $position
+/// @param {Boolean} $icon
+/// @param {Boolean} $styles
+@mixin icon($position: before, $icon: false, $styles: true) {
   @if $position == both {
     $position: 'before, &:after';
   }
-  // Either a :before or :after pseudo-element, or both, defaulting to :before
+
   &:#{$position} {
     @if $icon {
-      // A particular icon has been specified
       content: '#{map-get($icons, $icon)}';
     }
+
     @if $styles {
-      // Supportive icon styles required
-      speak: none;
+      font-family: 'Font Awesome 5 Free'; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
       font-style: normal;
-      font-weight: 400;
       font-variant: normal;
+      font-weight: 600;
+      speak: none;
       text-transform: none;
-      font-family: $font-family !important; /* stylelint-disable-line font-family-no-missing-generic-family-keyword */ /* stylelint-disable-line declaration-no-important */
     }
-    // Include any extra rules supplied for the pseudo-element
+
     @content;
   }
 }
 
-// f=fontawesome icons
-// icon font codes
+// Icon Font Codes
 $icons: (
   // social icons
   facebook: '\f09a',
@@ -303,7 +299,6 @@ $icons: (
   anchor: '\f13d',
   ban: '\f05e',
   bars: '\f0c9',
-  book: '\f02d',
   calculator: '\f1ec',
   check: '\f05e',
   check-circle: '\f058',
@@ -316,14 +311,8 @@ $icons: (
   devel: '\f121',
   ellipsis-h: '\f141',
   ellipsis-v: '\f142',
-  envelope: '\f0e0',
-  envelope-open: '\f2b6',
-  map-marker: '\f041',
   menu: '\f039',
-  mobile: '\f3cd',
   more: '\f105',
-  phone: '\f095',
-  phone-alt: '\f879',
   print: '\f02f',
   redo: '\f01e',
   redo-alt: '\f2f9',
@@ -399,42 +388,3 @@ $icons: (
   exclamation-circle: '\f06a',
   exclamation-triangle: '\f071',
 );
-
-/**
- * Hide elements visually, but keep them available for screen readers.
- *
- * Used for information required for screen reader users to understand and use
- * the site where visual display is undesirable. Information provided in this
- * manner should be kept concise, to avoid unnecessary burden on the user.
- * "!important" is used to prevent unintentional overrides.
- */
-@mixin visually-hidden($focusable: false) {
-  position: absolute !important; /* stylelint-disable-line declaration-no-important */
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
-
-  /**
-   * The .focusable class extends the .visually-hidden class to allow
-   * the element to be focusable when navigated to via the keyboard.
-   */
-  @if $focusable {
-
-    &:active,
-    &:focus {
-      position: static !important; /* stylelint-disable-line declaration-no-important */
-      clip: auto;
-      overflow: visible;
-      height: auto;
-      width: auto;
-    }
-  }
-}
-
-@mixin set-grid-container() {
-  max-width: $grid-container;
-  margin-left: auto;
-  margin-right: auto;
-}
