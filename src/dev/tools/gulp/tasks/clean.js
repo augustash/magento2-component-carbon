@@ -15,9 +15,9 @@ export const cleanTask = () => {
 
   themeLoader().forEach(name => {
     const theme = themes[name];
-    const outputName = theme.outputName + '.*' || 'theme.*';
-    cleanPaths.push(path.join(projectRoot, theme.dest, 'css/', outputName));
-    cleanPaths.push(path.join(projectRoot, theme.dest, 'js/', outputName));
+    const outputName = theme.outputName || 'theme';
+    cleanPaths.push(path.join(projectRoot, theme.dest, 'css/', outputName + '.*'));
+    cleanPaths.push(path.join(projectRoot, theme.dest, 'js/', outputName + '.*'));
   });
 
   cleanPaths.push(path.join(projectRoot, 'pub/static/**'));
