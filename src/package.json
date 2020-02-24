@@ -6,7 +6,6 @@
         "Pete McWilliams <pmcwilliams@augustash.com> (https://www.augustash.com)"
     ],
     "private": true,
-    "version": "0.9.0",
     "engines": {
         "node": ">=12.13.0 <13.0.0"
     },
