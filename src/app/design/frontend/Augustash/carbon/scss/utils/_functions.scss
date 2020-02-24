@@ -2,7 +2,11 @@
 // FUNCTIONS
 // ------------------------------------------------------------------------------
 
-// map deep get
+/// Map deep get
+///
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);
@@ -10,7 +14,11 @@
   @return $map;
 }
 
-// retrieve color and set its opacity.
+/// Retrieve the color and set its opacity.
+///
+/// @param {String} $color - Color code
+/// @param {Float} $amount - Opacity level
+/// @return {*} - The opacity adjusted color
 @function alpha($color, $amount: 0.5) {
   @return rgba($color, $amount);
 }
