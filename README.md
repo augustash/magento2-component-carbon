@@ -27,11 +27,12 @@ Next follow these initial configuration steps:
 
 1. Change directories to your project's source root - `cd ~/Project/magento2/src`
 2. Install dependencies - `yarn install`
-3. Create initial Gulp task file - `cp Gulpfile.esm.js.example Gulpfile.esm.js`
-4. Create initial Gulp configuration file - `cp gulp-config.json.example gulp-config.json`
-5. Create local configuration files - `cp dev/gulp/configs/themes.js dev/gulp/configs/themes.local.js`
-6. Customize configuration as your project demands - `gulp-config.json`, `themes.local.js`, `browser-sync.local.js`
-7. Set your project `.gitignore` to ignore the generated CSS files
+3. Create initial Gulp task file - `cp package.json.example package.json`
+4. Create initial Gulp task file - `cp Gulpfile.esm.js.example Gulpfile.esm.js`
+5. Create initial Gulp configuration file - `cp gulp-config.json.example gulp-config.json`
+6. Create local configuration files - `cp dev/tools/gulp/configs/themes.js dev/tools/gulp/configs/themes.local.js`
+7. Customize configuration as your project demands - `gulp-config.json`, `themes.local.js`, `browser-sync.local.js`
+8. Set your project `.gitignore` to ignore the generated CSS files
 
 ## Running Gulp
 
