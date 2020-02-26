@@ -18,5 +18,6 @@ export const clean = cleanTask;
 export const css = series(cleanTask, lintScssTask, stylesheetsTask);
 export const js = series(cleanTask, javascriptTask);
 export const lintScss = lintScssTask;
-export const serve = series(parallel(series(lintScssTask, stylesheetsTask), javascriptTask), browserSyncTask, watchTask);
-export const watch = watchTask;
+export const serve = series(cleanTask, parallel(series(lintScssTask, stylesheetsTask), javascriptTask), browserSyncTask, watchTask);
+export const watch = series(cleanTask, watchTask);
+export default series(cleanTask, parallel(series(lintScssTask, stylesheetsTask), javascriptTask), browserSyncTask, watchTask);
