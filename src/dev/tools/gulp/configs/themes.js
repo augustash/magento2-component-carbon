@@ -11,7 +11,7 @@
 export default {
   carbon: {
     dest: 'app/design/frontend/Augustash/carbon/web/',
-    src: 'app/design/frontend/Augustash/carbon/',
+    src: 'app/design/frontend/Augustash/carbon/src/',
     jsDir: 'js/**/*.js',
     scssDir: 'scss/**/*.scss',
     outputName: 'theme',
