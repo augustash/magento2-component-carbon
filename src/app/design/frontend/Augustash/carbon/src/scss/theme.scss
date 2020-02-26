@@ -3,7 +3,7 @@
 // This will include common utilities as well as eXo specific styles.
 // -----------------------------------------------------------------------------
 
-@import 'utils/exo--units';
+@import 'utils/units';
 @import 'utils/breakpoints';
 @import 'utils/functions';
 @import 'utils/variables';
@@ -18,6 +18,7 @@
 @import 'components/form/forms';
 @import 'components/misc/buttons';
 @import 'components/misc/compare';
+@import 'components/misc/luma-overrides';
 @import 'components/misc/messages';
 @import 'components/misc/ratings';
 @import 'components/navigation/breadcrumbs';
