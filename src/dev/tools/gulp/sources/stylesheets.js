@@ -29,5 +29,5 @@ export default (name, themeSrcPaths) => {
     .pipe(autoprefixer(browserListConfig.prefixes))
     .pipe(concat(outputName + '.css'))
     .pipe(dest(themeDestPath, { sourcemaps: '.' }))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream({match: '**/*.css'}));
 };

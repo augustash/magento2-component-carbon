@@ -13,9 +13,9 @@ export default {
   notify: false,
   openAutomatically: false,
   port: 3000,
-  proxy: "https://localhost",
+  proxy: 'https://localhost',
   ssl: {
-    cert: "/usr/local/etc/nginx/ssl/localhost.pem",
-    key: "/usr/local/etc/nginx/ssl/localhost.key",
+    cert: '/usr/local/etc/nginx/ssl/localhost.pem',
+    key: '/usr/local/etc/nginx/ssl/localhost.key',
   },
 };
