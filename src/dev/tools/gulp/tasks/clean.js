@@ -20,7 +20,7 @@ export const cleanTask = () => {
     cleanPaths.push(path.join(projectRoot, theme.dest, 'js/', outputName + '.*'));
   });
 
-  cleanPaths.push(path.join(projectRoot, 'pub/static/**'));
+  cleanPaths.push(path.join(projectRoot, 'pub/static/*'));
   cleanPaths.push(path.join('!', projectRoot, 'pub/static/.htaccess'));
 
   return del(cleanPaths);
