@@ -27,5 +27,5 @@ export default (name, themeSrcPaths) => {
     .pipe(concat(outputName + '.js'))
     .pipe(dest(themeDestPath, { sourcemaps: '.' }))
     .pipe(gulpIf(!browserSyncConfig.enabled, eslint.failAfterError()))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream({match: '**/*.js'}));
 };
