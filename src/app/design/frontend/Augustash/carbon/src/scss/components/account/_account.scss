@@ -1,19 +1,19 @@
 // Login page
 .customer-account-login {
-​
+
   .form-login {
-​
+
     .actions-toolbar {
-​
+
       .primary {
-​
+
         .action.login {
           font-size: rem-calc(24);
         }
       }
-​
+
       .secondary {
-​
+
         .action.remind {
           @include button($type: text);
           font-size: rem-calc(24);
@@ -21,93 +21,93 @@
       }
     }
   }
-​
+
   .block-new-customer {
-​
+
     .action.create {
       font-size: rem-calc(24);
     }
   }
 }
-​
+
 .customer-account-forgotpassword {
-​
+
   .action {
-​
+
     &.reload,
     &.captcha-reload {
       @include button($type: primary, $outline: true);
     }
   }
 }
-​
+
 // Account create page
 .customer-account-create {
-​
+
   .form.form-create-account {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-​
+
     @include breakpoint(medium) {
       flex-direction: row;
     }
-​
+
     > .fieldset {
       width: 100%;
-​
+
       legend {
-​
+
         > span {
-          font-size: rem-calc(20, $base-font-size);
+          font-size: rem-calc(20);
           font-weight: bold;
         }
       }
-​
+
       @include breakpoint(medium) {
         width: 45%;
         margin: $global-margin * 1.5;
       }
-​
+
       .field.choice.persistent {
-​
+
         .tooltip {
-​
+
           @include breakpoint(medium) {
             margin-left: $global-margin;
           }
         }
       }
     }
-​
+
     > .actions-toolbar {
       width: 100%;
     }
   }
 }
-​
+
 // My Account areas
 .account {
-​
+
   // My Account sidebar nav
   .sidebar-main {
-​
+
     .block-collapsible-nav {
-​
+
       .item {
-​
+
         &.current {
-​
+
           a,
           > strong {
             border-color: $primary-color;
           }
         }
-​
+
         a {
           color: $body-font-color;
-​
+
           &:hover,
           &:visited {
             color: $body-font-color;
@@ -116,37 +116,37 @@
       }
     }
   }
-​
+
   // Account Dashboard
   .box-actions,
   .block-dashboard-addresses {
-​
+
     .action {
-​
+
       &.edit {
         @include button($type: text);
         padding: 0;
       }
-​
+
       &.change-password {
         @include button($type: primary, $outline: true);
       }
     }
   }
-​
+
   .block-dashboard-orders {
-​
+
     .block-title {
-​
+
       .action.view {
         @include button($type: primary, $outline: true);
       }
     }
-​
+
     .orders-recent {
-​
+
       .col.actions {
-​
+
         .action {
           @include button($type: text);
           padding: 0;
@@ -154,20 +154,20 @@
       }
     }
   }
-​
+
   // Order information block.
   .column.main {
-​
+
     .block.block-order-details-view {
-​
+
       > .block-content:not(.widget) {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-​
+
         > .box {
           width: 100%;
-​
+
           @include breakpoint(medium) {
             width: 50%;
           }
@@ -175,14 +175,14 @@
       }
     }
   }
-​
+
   // My Orders - History
   &.sales-order-history {
-​
+
     .orders-history {
-​
+
       .col.actions {
-​
+
         .action {
           @include button($type: text);
           padding: 0;
@@ -190,20 +190,20 @@
       }
     }
   }
-​
+
   // My Orders - View/Print Order page
   &.sales-order-view,
   &.sales-order-print {
-​
+
     .page-title-wrapper {
-​
+
       .order-status {
         border-color: $green;
         color: $green;
       }
-​
+
       .order-actions-toolbar {
-​
+
         .action.order {
           @include button($type: primary, $outline: true);
         }
