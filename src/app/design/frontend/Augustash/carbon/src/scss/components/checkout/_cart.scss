@@ -78,13 +78,13 @@
         @include button($type: text);
         @include icon($position: before, $icon: chevron-left);
         float: left;
-        font-size: rem-calc(20);
+        font-size: rem-calc(20, $base-font-size);
       }
 
       &.clear {
         @include button($type: text);
         @include icon($position: before, $icon: trash-alt);
-        font-size: rem-calc(20);
+        font-size: rem-calc(20, $base-font-size);
         margin-left: $global-margin;
 
         &:before {
@@ -95,7 +95,7 @@
       &.update {
         @include button($type: primary, $outline: true);
         @include icon($position: before, $icon: sync);
-        font-size: rem-calc(20);
+        font-size: rem-calc(20, $base-font-size);
         margin-left: $global-margin;
       }
     }
@@ -123,7 +123,7 @@
       &.primary:not(:focus) {
         @include button($type: primary);
         border-radius: 0;
-        font-size: rem-calc(22.4);
+        font-size: rem-calc(22.4, $base-font-size);
       }
     }
   }

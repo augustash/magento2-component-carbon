@@ -3,7 +3,7 @@
 
   .name,
   .product-item-name {
-    font-size: rem-calc(24);
+    font-size: rem-calc(24, $base-font-size);
 
     a {
       font-weight: $bold-font-weight;
