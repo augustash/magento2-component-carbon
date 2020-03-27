@@ -29,7 +29,7 @@
     .product-item {
 
       .product-item-name {
-        font-size: rem-calc(22);
+        font-size: rem-calc(22, $base-font-size);
       }
     }
 
