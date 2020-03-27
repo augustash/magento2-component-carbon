@@ -8,7 +8,7 @@
       .primary {
 
         .action.login {
-          font-size: rem-calc(24);
+          font-size: rem-calc(24, $base-font-size);
         }
       }
 
@@ -16,7 +16,7 @@
 
         .action.remind {
           @include button($type: text);
-          font-size: rem-calc(24);
+          font-size: rem-calc(24, $base-font-size);
         }
       }
     }
@@ -25,7 +25,7 @@
   .block-new-customer {
 
     .action.create {
-      font-size: rem-calc(24);
+      font-size: rem-calc(24, $base-font-size);
     }
   }
 }
@@ -60,7 +60,7 @@
       legend {
 
         > span {
-          font-size: rem-calc(20);
+          font-size: rem-calc(20, $base-font-size);
           font-weight: bold;
         }
       }

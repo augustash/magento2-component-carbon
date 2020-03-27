@@ -24,7 +24,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: $body-font-family;
-  font-size: rem-calc(18);
+  font-size: rem-calc(18, $base-font-size);
   font-weight: 400;
   line-height: normal;
   margin: 0;

@@ -29,7 +29,7 @@
 [class^='sales-guest-'] .column.main .block:not(.widget) .block-title > span,
 .sales-guest-view .column.main .block:not(.widget) .block-title > strong,
 .sales-guest-view .column.main .block:not(.widget) .block-title > span {
-  font-size: rem-calc(24);
+  font-size: rem-calc(24, $base-font-size);
 }
 
 .order-review-form .action.primary,

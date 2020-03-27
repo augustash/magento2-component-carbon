@@ -3,7 +3,7 @@
   .actions {
 
     .action.subscribe {
-      font-size: rem-calc(22);
+      font-size: rem-calc(22, $base-font-size);
 
       &.sr-only {
         height: auto;
