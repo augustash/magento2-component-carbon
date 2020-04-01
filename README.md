@@ -9,8 +9,8 @@ A set of opinionated front-end tools and configuration for theming Magento 2, ba
 ## Requirements
 
 * A Unix-based OS (no official Windows support).
-* A modern Node.js LTS version.
-* (optional) Gulp.js CLI package installed globally
+* A modern Node.js LTS version greater than 10.12.0.
+* (optional) Gulp.js CLI package installed globally.
     * `yarn global add gulp-cli`
     * `npm install -g gulp-cli`
 
@@ -20,7 +20,7 @@ Install the components using Composer from our development package repository:
 
 ```bash
 composer config repositories.augustash composer https://packages.augustash.com/repo/private
-composer require augustash/carbon:~0.9.9
+composer require augustash/carbon:~0.9.10
 ```
 
 Next follow these initial configuration steps:
