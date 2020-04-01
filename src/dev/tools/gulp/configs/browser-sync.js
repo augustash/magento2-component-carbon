@@ -11,7 +11,7 @@
 export default {
   enabled: false,
   notify: false,
-  openAutomatically: false,
+  open: false,
   port: 3000,
   proxy: 'https://localhost',
   ssl: {
