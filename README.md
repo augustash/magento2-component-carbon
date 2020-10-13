@@ -1,4 +1,4 @@
-# Gulp Theme Workflow for Magento 2
+# Carbon, a Sass-based Theme for Magento 2
 
 ![https://www.augustash.com](http://augustash.s3.amazonaws.com/logos/ash-inline-color-500.png)
 
@@ -19,8 +19,8 @@ A set of opinionated front-end tools and configuration for theming Magento 2, ba
 Install the components using Composer from our development package repository:
 
 ```bash
-composer config repositories.augustash composer https://packages.augustash.com/repo/private
-composer require augustash/carbon:~0.9.10
+composer config repositories.augustash composer https://augustash.repo.repman.io
+composer require augustash/carbon:~1.0.0
 ```
 
 Next follow these initial configuration steps:
@@ -70,7 +70,7 @@ magento2-project-source
 │   └── design
 │       └── frontend
 │           └── Augustash
-│               └── carbon
+│               └── Carbon
 │                   ├── etc
 │                   ├── i18n
 │                   ├── Magento_Theme
