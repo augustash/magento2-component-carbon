@@ -18,7 +18,6 @@
 @import 'components/form/forms';
 @import 'components/misc/buttons';
 @import 'components/misc/compare';
-@import 'components/misc/luma-overrides';
 @import 'components/misc/messages';
 @import 'components/misc/ratings';
 @import 'components/navigation/breadcrumbs';
@@ -27,6 +26,7 @@
 @import 'components/navigation/pagination';
 @import 'components/product/product-item';
 @import 'components/product/product--gallery';
+@import 'components/misc/luma-overrides';
 
 // individual Component Regions
 @import 'regions/**/*.scss';

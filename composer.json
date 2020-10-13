@@ -1,14 +1,14 @@
 {
     "name": "augustash/carbon",
-    "description": "A Sass-based boilerplate theme for Magento 2.",
     "type": "magento2-component",
-    "version": "0.9.10",
+    "description": "A Sass-based boilerplate theme for Magento 2.",
+    "version": "1.0.0",
     "license": "MIT",
-    "config": {
-        "sort-packages": true
-    },
     "require": {
         "magento/framework": "*"
+    },
+    "config": {
+        "sort-packages": true
     },
     "extra": {
         "map": [
