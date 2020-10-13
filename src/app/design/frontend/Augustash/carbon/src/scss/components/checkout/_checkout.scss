@@ -4,7 +4,7 @@
 
     .action.action-auth-toggle {
       @include button($type: primary);
-      font-size: rem-calc(24, $base-font-size);
+      font-size: rem-calc(16, $base-font-size);
     }
   }
 
@@ -21,7 +21,7 @@
           &.login,
           &.action-login {
             @include button($type: primary);
-            font-size: rem-calc(24, $base-font-size);
+            font-size: rem-calc(16, $base-font-size);
           }
         }
       }
@@ -36,7 +36,7 @@
           &.remind,
           &.action-remind {
             @include button($type: text);
-            font-size: rem-calc(24, $base-font-size);
+            font-size: rem-calc(16, $base-font-size);
           }
         }
       }
@@ -153,13 +153,13 @@
             &.action-update {
               @include button($type: primary);
               float: left;
-              font-size: rem-calc(20, $base-font-size);
+              font-size: rem-calc(16, $base-font-size);
             }
 
             &.action-cancel {
               @include button($type: text);
               float: left;
-              font-size: rem-calc(20, $base-font-size);
+              font-size: rem-calc(16, $base-font-size);
             }
           }
         }
