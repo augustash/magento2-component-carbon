@@ -11,6 +11,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/Augustash/Carbon',
+    'frontend/Augustash/carbon',
     __DIR__
 );
