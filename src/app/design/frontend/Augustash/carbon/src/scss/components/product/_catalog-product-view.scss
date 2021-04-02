@@ -1,0 +1,21 @@
+
+.catalog-product-view {
+
+  .product-options-bottom,
+  .product-info-price {
+
+    .price-box {
+
+      .price-container {
+
+        .price {
+
+          @include breakpoint(medium) {
+            font-size: rem-calc(30);
+            line-height: rem-calc(36);
+          }
+        }
+      }
+    }
+  }
+}
