@@ -2,6 +2,7 @@
 
   strong.page {
     background-color: $primary-color;
+    line-height: $global-padding * 2;
 
     span {
       color: $white;
@@ -9,9 +10,11 @@
   }
 
   .item {
+    line-height: $global-padding * 2;
 
     a {
       color: $primary-color;
+      transition: color $global-speed, background-color $global-speed;
 
       &:visited,
       &:active,
@@ -20,7 +23,8 @@
       }
 
       &:hover {
-        color: darken($primary-color, 10);
+        background-color: $primary-color;
+        color: $white;
       }
     }
   }

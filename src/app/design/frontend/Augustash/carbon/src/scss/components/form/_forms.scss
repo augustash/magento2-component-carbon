@@ -10,7 +10,7 @@ form,
   .action.submit,
   .action.save,
   input[type='submit'] {
-    font-size: rem-calc(16, $base-font-size);
+    font-size: rem-calc(16);
   }
 }
 

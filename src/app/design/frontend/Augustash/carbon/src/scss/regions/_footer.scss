@@ -1,9 +1,19 @@
+
+.page-footer {
+  background-color: $footer-background;
+}
+
 .block.newsletter {
+
+  input {
+    height: rem-calc(38);
+    border-radius: $global-radius 0 0 $global-radius;
+  }
 
   .actions {
 
     .action.subscribe {
-      font-size: rem-calc(14, $base-font-size);
+      font-size: rem-calc(14);
 
       &.sr-only {
         height: auto;

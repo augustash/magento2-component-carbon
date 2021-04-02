@@ -1,11 +1,29 @@
-.breadcrumbs a {
-  color: $primary-color;
 
-  &:visited {
-    color: $primary-color;
+.breadcrumbs {
+
+  .items {
+    font-size: rem-calc(16);
   }
 
-  &:hover {
-    color: darken($primary-color, 20);
+  .item {
+
+    &:not(:last-child) {
+
+      &:after {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  a {
+    color: $primary-color;
+
+    &:visited {
+      color: $primary-color;
+    }
+
+    &:hover {
+      color: darken($primary-color, 20);
+    }
   }
 }
