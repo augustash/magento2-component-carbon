@@ -8,7 +8,7 @@
       .primary {
 
         .action.login {
-          font-size: rem-calc(16, $base-font-size);
+          font-size: rem-calc(16);
         }
       }
 
@@ -16,7 +16,7 @@
 
         .action.remind {
           @include button($type: text);
-          font-size: rem-calc(16, $base-font-size);
+          font-size: rem-calc(16);
         }
       }
     }
@@ -25,7 +25,7 @@
   .block-new-customer {
 
     .action.create {
-      font-size: rem-calc(16, $base-font-size);
+      font-size: rem-calc(16);
     }
   }
 }
@@ -52,6 +52,7 @@
 
     @include breakpoint(medium) {
       flex-direction: row;
+      justify-content: space-between;
     }
 
     > .fieldset {
@@ -60,14 +61,13 @@
       legend {
 
         > span {
-          font-size: rem-calc(20, $base-font-size);
+          font-size: rem-calc(20);
           font-weight: bold;
         }
       }
 
       @include breakpoint(medium) {
-        width: 45%;
-        margin: $global-margin * 1.5;
+        width: 48%;
       }
 
       .field.choice.persistent {
