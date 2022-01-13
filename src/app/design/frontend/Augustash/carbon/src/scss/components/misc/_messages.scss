@@ -58,4 +58,38 @@
       }
     }
   }
+
+  &.disclaimer {
+    background: lighten(map-deep-get($foundation-palette, disclaimer), 50);
+    color: map-deep-get($foundation-palette, disclaimer);
+
+    a {
+      color: darken(map-deep-get($foundation-palette, disclaimer), 10);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: darken(map-deep-get($foundation-palette, disclaimer), 10);
+      }
+    }
+  }
+
+  &.note {
+    background: lighten(map-deep-get($foundation-palette, note), 50);
+    color: map-deep-get($foundation-palette, note);
+
+    a {
+      color: darken(map-deep-get($foundation-palette, note), 10);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:visited {
+        color: darken(map-deep-get($foundation-palette, note), 10);
+      }
+    }
+  }
 }
