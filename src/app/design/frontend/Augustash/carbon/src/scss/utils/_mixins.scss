@@ -24,7 +24,7 @@
   cursor: pointer;
   display: inline-block;
   font-family: $body-font-family;
-  font-size: rem-calc(18, $base-font-size);
+  font-size: rem-calc(18);
   font-weight: 400;
   line-height: normal;
   margin: 0;
@@ -33,6 +33,7 @@
   text-align: center;
   text-decoration: none;
   width: auto;
+  transition: background-color $global-speed, color $global-speed;
 
   &:visited,
   &:active,
@@ -388,3 +389,35 @@ $icons: (
   exclamation-circle: '\f06a',
   exclamation-triangle: '\f071',
 );
+
+/**
+ * Hide elements visually, but keep them available for screen readers.
+ *
+ * Used for information required for screen reader users to understand and use
+ * the site where visual display is undesirable. Information provided in this
+ * manner should be kept concise, to avoid unnecessary burden on the user.
+ * "!important" is used to prevent unintentional overrides.
+ */
+@mixin visually-hidden($focusable: false) {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+
+  /**
+   * The .focusable class extends the .visually-hidden class to allow
+   * the element to be focusable when navigated to via the keyboard.
+   */
+  @if $focusable {
+    &:active,
+    &:focus {
+      position: static !important;
+      clip: auto;
+      overflow: visible;
+      height: auto;
+      width: auto;
+    }
+  }
+}

@@ -1,22 +1,27 @@
-.product,
-.product-item {
 
-  .name,
-  .product-item-name {
-    font-size: rem-calc(24, $base-font-size);
+.product-items {
 
-    a {
-      font-weight: $bold-font-weight;
+  .product,
+  .product-item {
+    font-size: rem-calc(16);
 
-      &:hover,
-      &:visited {
-        color: $body-font-color;
+    .name,
+    .product-item-name {
+      font-size: rem-calc(20);
+
+      a {
+        font-weight: $bold-font-weight;
+
+        &:hover,
+        &:visited {
+          color: $body-font-color;
+        }
       }
     }
-  }
 
-  .action.more {
-    @include button($type: primary, $outline: true);
+    .action.more {
+      @include button($type: primary, $outline: true);
+    }
   }
 }
 

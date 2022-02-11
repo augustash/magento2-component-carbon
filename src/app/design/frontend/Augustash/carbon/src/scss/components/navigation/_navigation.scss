@@ -57,7 +57,7 @@
 
     li {
       @media (max-width: 768px) and (pointer: coarse) {
-        font-size: rem-calc(22, $base-font-size);
+        font-size: rem-calc(22);
       }
     }
   }

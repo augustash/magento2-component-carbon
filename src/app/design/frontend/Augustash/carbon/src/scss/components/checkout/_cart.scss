@@ -50,6 +50,11 @@
 
   &.item {
 
+    .product-item-name {
+      font-size: rem-calc(20);
+      line-height: rem-calc(28);
+    }
+
     .item-actions {
 
       .action {
@@ -78,13 +83,13 @@
         @include button($type: text);
         @include icon($position: before, $icon: chevron-left);
         float: left;
-        font-size: rem-calc(20, $base-font-size);
+        font-size: rem-calc(20);
       }
 
       &.clear {
         @include button($type: text);
         @include icon($position: before, $icon: trash-alt);
-        font-size: rem-calc(20, $base-font-size);
+        font-size: rem-calc(20);
         margin-left: $global-margin;
 
         &:before {
@@ -95,7 +100,7 @@
       &.update {
         @include button($type: primary, $outline: true);
         @include icon($position: before, $icon: sync);
-        font-size: rem-calc(20, $base-font-size);
+        font-size: rem-calc(20);
         margin-left: $global-margin;
       }
     }
@@ -110,8 +115,13 @@
 
       strong {
         color: $body-font-color;
+        font-size: rem-calc(16);
       }
     }
+  }
+
+  input {
+    height: rem-calc(40);
   }
 
   .actions-toolbar {
@@ -123,7 +133,7 @@
       &.primary:not(:focus) {
         @include button($type: primary);
         border-radius: 0;
-        font-size: rem-calc(16, $base-font-size);
+        font-size: rem-calc(16);
       }
     }
   }

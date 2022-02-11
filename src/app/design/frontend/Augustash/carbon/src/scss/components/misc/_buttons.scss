@@ -42,6 +42,7 @@ body a.action {
   .action {
     @include button($type: text);
     color: $font-black;
+    padding-left: 0;
   }
 }
 

@@ -29,7 +29,7 @@
 [class^='sales-guest-'] .column.main .block:not(.widget) .block-title > span,
 .sales-guest-view .column.main .block:not(.widget) .block-title > strong,
 .sales-guest-view .column.main .block:not(.widget) .block-title > span {
-  font-size: rem-calc(24, $base-font-size);
+  font-size: rem-calc(24);
 }
 
 .order-review-form .action.primary,
@@ -46,6 +46,7 @@
 .box-tocart .action.instant-purchase,
 .multicheckout .action.primary {
   font-size: inherit;
+  line-height: inherit;
 }
 
 .abs-account-block-font-size,
@@ -58,4 +59,28 @@
 .block-balance-giftcard .block-content,
 .block-reviews-dashboard .product-name {
   font-size: inherit;
+}
+
+.paypal-review .table-paypal-review-items .col.price .price-including-tax,
+.paypal-review .table-paypal-review-items .col.price .price-excluding-tax,
+.paypal-review .table-paypal-review-items .col.subtotal .price-including-tax,
+.paypal-review .table-paypal-review-items .col.subtotal .price-excluding-tax,
+.cart.table-wrapper .col.price .price-including-tax,
+.cart.table-wrapper .col.price .price-excluding-tax,
+.cart.table-wrapper .col.subtotal .price-including-tax,
+.cart.table-wrapper .col.subtotal .price-excluding-tax,
+.cart.table-wrapper .col.msrp .price-including-tax,
+.cart.table-wrapper .col.msrp .price-excluding-tax,
+.order-details-items .col.price .price-including-tax,
+.order-details-items .col.price .price-excluding-tax,
+.order-details-items .col.subtotal .price-including-tax,
+.order-details-items .col.subtotal .price-excluding-tax {
+  font-size: rem-calc(16);
+}
+
+.cart-totals .grand .mark,
+.opc-block-summary .table-totals .grand .mark,
+.cart-totals .grand .amount,
+.opc-block-summary .table-totals .grand .amount {
+  font-size: rem-calc(16);
 }

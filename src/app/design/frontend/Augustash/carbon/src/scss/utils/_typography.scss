@@ -11,9 +11,77 @@
   color: $white;
 }
 
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: rem-calc(30);
+  line-height: rem-calc(36);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(36);
+    line-height: rem-calc(44);
+  }
+}
+
+h2 {
+  font-size: rem-calc(26);
+  line-height: rem-calc(32);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(30);
+    line-height: rem-calc(36);
+  }
+}
+
+h3 {
+  font-size: rem-calc(22);
+  line-height: rem-calc(26);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(26);
+    line-height: rem-calc(32);
+  }
+}
+
+h4 {
+  font-size: rem-calc(20);
+  line-height: rem-calc(24);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(22);
+    line-height: rem-calc(26);
+  }
+}
+
+h5 {
+  font-size: rem-calc(18);
+  line-height: rem-calc(22);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(20);
+    line-height: rem-calc(24);
+  }
+}
+
+h6 {
+  font-size: rem-calc(15);
+  line-height: rem-calc(18);
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(18);
+    line-height: rem-calc(22);
+  }
+}
+
 a,
 .alink {
   color: $primary-color;
+  transition: color $global-speed;
 
   &:visited {
     color: $primary-color;
