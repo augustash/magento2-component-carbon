@@ -2,7 +2,7 @@
     "name": "augustash/carbon",
     "type": "magento2-component",
     "description": "A Sass-based boilerplate theme for Magento 2.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "license": "MIT",
     "require": {
         "magento/framework": "*"

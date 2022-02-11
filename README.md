@@ -20,7 +20,7 @@ Install the components using Composer from our development package repository:
 
 ```bash
 composer config repositories.augustash composer https://augustash.repo.repman.io
-composer require augustash/carbon:~1.0.2
+composer require augustash/carbon:~1.0.3
 ```
 
 Next follow these initial configuration steps:
