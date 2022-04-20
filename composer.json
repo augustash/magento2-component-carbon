@@ -13,6 +13,10 @@
     "extra": {
         "map": [
             [
+                "src/.editorconfig",
+                ".editorconfig"
+            ],
+            [
                 "src/gulp-config.json.example",
                 "gulp-config.json.example"
             ],
