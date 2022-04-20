@@ -29,8 +29,8 @@
                 "stylelint.config.js"
             ],
             [
-                "src/yarn.lock",
-                "yarn.lock"
+                "src/package-lock.json",
+                "package-lock.json"
             ],
             [
                 "src/app/design/frontend/Augustash/carbon",
