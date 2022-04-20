@@ -13,8 +13,11 @@ import autoprefixer from 'gulp-autoprefixer';
 import browserSyncLib from 'browser-sync';
 import concat from 'gulp-concat';
 import path from 'path';
-import sass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
+import gulpSass from "gulp-sass";
+import dartSass from "sass";
+
+const sass = gulpSass(dartSass);
 
 export default (name, themeSrcPaths) => {
   const browserSync = browserSyncLib.create();
@@ -27,7 +30,7 @@ export default (name, themeSrcPaths) => {
     .pipe(sass({
       errLogToConsole: true,
       outputStyle: theme.outputStyle || 'compressed'
-    }))
+    }).on('error', sass.logError))
     .pipe(autoprefixer(browserListConfig.prefixes))
     .pipe(concat(outputName + '.css'))
     .pipe(dest(themeDestPath, { sourcemaps: '.' }))

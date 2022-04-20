@@ -1,36 +1,35 @@
 {
-    "name": "carbon",
-    "description": "A Sass-based boilerplate theme for Magento 2.",
-    "author": "Jacob Weber <jweber@augustash.com> (https://www.augustash.com)",
-    "contributors": [
-        "Pete McWilliams <pmcwilliams@augustash.com> (https://www.augustash.com)"
-    ],
-    "private": true,
-    "engines": {
-        "node": ">=10.12.0 <13.0.0"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "aeon-breakpoints": "git+https://github.com/jacerider/aeon-breakpoints.git",
-        "browser-sync": "2.26.7",
-        "del": "5.1.0",
-        "eslint": "6.8.0",
-        "esm": "3.2.25",
-        "gulp": "4.0.2",
-        "gulp-autoprefixer": "7.0.1",
-        "gulp-concat": "2.6.1",
-        "gulp-eslint": "6.0.0",
-        "gulp-if": "3.0.0",
-        "gulp-sass": "4.0.2",
-        "gulp-sass-glob": "1.1.0",
-        "gulp-stylelint": "13.0.0",
-        "gulp-uglify": "3.0.2",
-        "merge-stream": "2.0.0",
-        "node-sass": "4.13.1",
-        "stylelint": "13.2.0",
-        "stylelint-config-ash": "git+https://github.com/weberjacob/stylelint-config-ash.git",
-        "stylelint-config-standard": "20.0.0",
-        "stylelint-order": "4.0.0",
-        "stylelint-scss": "3.14.2"
-    }
+  "name": "carbon",
+  "description": "A Sass-based boilerplate theme for Magento 2.",
+  "author": "Jacob Weber <jweber@augustash.com> (https://www.augustash.com)",
+  "contributors": [
+    "Pete McWilliams <pmcwilliams@augustash.com> (https://www.augustash.com)"
+  ],
+  "private": true,
+  "engines": {
+    "node": ">=10.12.0 <13.0.0"
+  },
+  "devDependencies": {
+    "aeon-breakpoints": "git+https://github.com/jacerider/aeon-breakpoints.git",
+    "browser-sync": "2.27.9",
+    "del": "6.0.0",
+    "eslint": "8.13.0",
+    "esm": "3.2.25",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "8.0.0",
+    "gulp-concat": "2.6.1",
+    "gulp-eslint": "6.0.0",
+    "gulp-if": "3.0.0",
+    "gulp-sass": "5.1.0",
+    "gulp-sass-glob": "1.1.0",
+    "gulp-stylelint": "13.0.0",
+    "gulp-uglify": "3.0.2",
+    "merge-stream": "2.0.0",
+    "sass": "1.50.1",
+    "stylelint": "13.13.1",
+    "stylelint-config-ash": "git+https://github.com/weberjacob/stylelint-config-ash.git#2.0.0",
+    "stylelint-config-standard": "22.0.0",
+    "stylelint-order": "4.1.0",
+    "stylelint-scss": "3.21.0"
+  }
 }

@@ -399,7 +399,7 @@ $icons: (
  * "!important" is used to prevent unintentional overrides.
  */
 @mixin visually-hidden($focusable: false) {
-  position: absolute !important;
+  position: absolute !important; /* stylelint-disable-line declaration-no-important */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
@@ -411,9 +411,10 @@ $icons: (
    * the element to be focusable when navigated to via the keyboard.
    */
   @if $focusable {
+
     &:active,
     &:focus {
-      position: static !important;
+      position: static !important; /* stylelint-disable-line declaration-no-important */
       clip: auto;
       overflow: visible;
       height: auto;
