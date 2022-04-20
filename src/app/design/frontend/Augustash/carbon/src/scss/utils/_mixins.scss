@@ -2,6 +2,8 @@
 // MIXINS
 // ------------------------------------------------------------------------------
 
+@use 'sass:math';
+
 @mixin header-size($type) {
   font-size: rem-calc(map-deep-get($header-sizes, small, $type, font-size));
   font-weight: 400;
@@ -28,7 +30,7 @@
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  padding: ($global-padding / 2) ($global-padding * 2);
+  padding: math.div($global-padding, 2) ($global-padding * 2);
   position: relative;
   text-align: center;
   text-decoration: none;
