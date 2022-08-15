@@ -2,6 +2,8 @@
 // MIXINS
 // ------------------------------------------------------------------------------
 
+@use 'sass:math';
+
 @mixin header-size($type) {
   font-size: rem-calc(map-deep-get($header-sizes, small, $type, font-size));
   font-weight: 400;
@@ -28,7 +30,7 @@
   font-weight: 400;
   line-height: normal;
   margin: 0;
-  padding: ($global-padding / 2) ($global-padding * 2);
+  padding: math.div($global-padding, 2) ($global-padding * 2);
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -399,7 +401,7 @@ $icons: (
  * "!important" is used to prevent unintentional overrides.
  */
 @mixin visually-hidden($focusable: false) {
-  position: absolute !important;
+  position: absolute !important; /* stylelint-disable-line declaration-no-important */
   clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   height: 1px;
@@ -411,9 +413,10 @@ $icons: (
    * the element to be focusable when navigated to via the keyboard.
    */
   @if $focusable {
+
     &:active,
     &:focus {
-      position: static !important;
+      position: static !important; /* stylelint-disable-line declaration-no-important */
       clip: auto;
       overflow: visible;
       height: auto;

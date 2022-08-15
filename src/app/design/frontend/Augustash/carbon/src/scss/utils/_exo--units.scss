@@ -1,3 +1,9 @@
+// ------------------------------------------------------------------------------
+// Unit functions from Exo
+// ------------------------------------------------------------------------------
+
+@use 'sass:math';
+
 $global-font-size: 100% !default;
 
 /// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
@@ -5,7 +11,7 @@ $global-font-size: 100% !default;
 /// @param {String|Number} $num - Number to strip unit from.
 /// @returns {Number} - The same number, sans unit.
 @function strip-unit($num) {
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, $num * 0 + 1);
 }
 
 /// Converts one or more pixel values into matching rem values.
@@ -22,7 +28,7 @@ $global-font-size: 100% !default;
   }
 
   @if unit($base) == '%' {
-    $base: ($base / 100%) * 16px;
+    $base: math.div($base, 100%) * 16px;
   }
 
   @if unit($base) == 'rem' {
@@ -71,7 +77,7 @@ $global-font-size: 100% !default;
   }
 
   @if unit($value) != 'rem' {
-    $value: strip-unit($value) / strip-unit($base) * 1rem;
+    $value: math.div(strip-unit($value), strip-unit($base)) * 1rem;
   }
 
   @if $value == 0rem { /* stylelint-disable-line length-zero-no-unit */
@@ -79,4 +85,36 @@ $global-font-size: 100% !default;
   }
 
   @return $value;
+}
+
+/// Casts a map into a list.
+/// @link http://hugogiraudel.com/2014/04/28/casting-map-into-list/
+///
+/// @param {Map} $map - Map to pull a value from.
+///
+/// @returns {List} Depending on the flag, returns either $keys or $values or both.
+@function map-to-list($map, $keep: 'both') {
+  $keep: if(index('keys' 'values', $keep), $keep, 'both');
+
+  @if type-of($map) == 'map' {
+    $keys: ();
+    $values: ();
+
+    @each $key, $val in $map {
+      $keys: append($keys, $key);
+      $values: append($values, $val);
+    }
+
+    @if $keep == 'keys' {
+      @return $keys;
+    }
+    @else if $keep == 'values' {
+      @return $values;
+    }
+    @else {
+      @return zip($keys, $values);
+    }
+  }
+
+  @return if(type-of($map) != 'list', ($value,), $map);
 }

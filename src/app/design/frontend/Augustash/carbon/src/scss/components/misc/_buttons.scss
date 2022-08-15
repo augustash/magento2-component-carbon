@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 html button,
 body button,
 button,
@@ -24,7 +26,7 @@ body a.action {
   &.remove,
   &.sorter-action {
     background: transparent;
-    padding: $global-padding / 4;
+    padding: math.div($global-padding, 4);
 
     &:hover {
       background: transparent;

@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .minicart-wrapper {
 
   .action.showcart {
@@ -62,7 +64,7 @@
         &.action-edit,
         &.action-delete {
           background: transparent;
-          padding: $global-padding / 2;
+          padding: math.div($global-padding, 2);
         }
 
         &.towishlist,

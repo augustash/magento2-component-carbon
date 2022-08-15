@@ -11,7 +11,6 @@ A set of opinionated front-end tools and configuration for theming Magento 2, ba
 * A Unix-based OS (no official Windows support).
 * A modern Node.js LTS version greater than 10.12.0.
 * (optional) Gulp.js CLI package installed globally.
-    * `yarn global add gulp-cli`
     * `npm install -g gulp-cli`
 
 ## Installation
@@ -20,15 +19,15 @@ Install the components using Composer from our development package repository:
 
 ```bash
 composer config repositories.augustash composer https://augustash.repo.repman.io
-composer require augustash/carbon:~1.0.3
+composer require augustash/carbon:~2.0.0
 ```
 
 Next follow these initial configuration steps:
 
 1. Change directories to your project's source root - `cd ~/Project/magento2/src`
-2. Install dependencies - `yarn install`
-3. Create initial Gulp task file - `cp package.json.example package.json`
-4. Create initial Gulp task file - `cp Gulpfile.esm.js.example Gulpfile.esm.js`
+2. Create initial Gulp task file - `cp package.json.example package.json`
+3. Create initial Gulp task file - `cp Gulpfile.esm.js.example Gulpfile.esm.js`
+4. Install dependencies - `npm install`
 5. Create initial Gulp configuration file - `cp gulp-config.json.example gulp-config.json`
 6. Create local configuration files - `cp dev/tools/gulp/configs/themes.js dev/tools/gulp/configs/themes.local.js`
 7. Customize configuration as your project demands - `gulp-config.json`, `themes.local.js`, `browser-sync.local.js`

@@ -1,4 +1,4 @@
 {
-    "browser-sync.js": "dev/tools/gulp/configs/browser-sync.local.js",
-    "themes.js": "dev/tools/gulp/configs/themes.local.js"
+  "browser-sync.js": "dev/tools/gulp/configs/browser-sync.local.js",
+  "themes.js": "dev/tools/gulp/configs/themes.local.js"
 }
